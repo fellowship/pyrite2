@@ -1,4 +1,4 @@
-# Sybil Documentation
+# Sibyl Documentation
 
 The source for Sybil documentation is in this directory under `sources/`. 
 Our documentation uses extended Markdown, as implemented by [MkDocs](http://mkdocs.org).
