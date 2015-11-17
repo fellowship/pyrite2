@@ -1,0 +1,34 @@
+site_name: Sybil Documentation
+theme: readthedocs
+docs_dir: sources
+repo_url: https://github.com/startupml/sibyl
+site_url: http://keras.io/
+#theme_dir: theme
+site_description: Documentation for high dimensional, fast and anomaly detection library.
+
+dev_addr: '0.0.0.0:8000'
+google_analytics: ['', '']
+
+
+pages:
+- Home: index.md
+- Index: documentation.md
+- Examples: examples.md
+- FAQ: faq.md
+- Objectives: objectives.md
+- Initializations: initializations.md
+- Regularizers: regularizers.md
+- Constraints: constraints.md
+- Layers:
+  - Core Layers: layers/core.md
+  - Convolutional Layers: layers/convolutional.md
+  - Recurrent Layers: layers/recurrent.md
+  - Advanced Activations Layers: layers/advanced_activations.md
+  - Normalization Layers: layers/normalization.md
+  - Embedding Layers: layers/embeddings.md
+  - Noise layers: layers/noise.md
+  - Containers: layers/containers.md
+- Preprocessing:
+  - Sequence Preprocessing: preprocessing/sequence.md
+  - Text Preprocessing: preprocessing/text.md
+  - Image Preprocessing: preprocessing/image.md
