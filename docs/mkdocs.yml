@@ -1,4 +1,4 @@
-site_name: Sybil Documentation
+site_name: Sibyl Documentation
 theme: readthedocs
 docs_dir: sources
 repo_url: https://github.com/startupml/sibyl
