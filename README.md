@@ -1,4 +1,4 @@
-Anomaly Detection in Categorical Datasets
+# Anomaly Detection in Categorical Datasets
 
 It can work with numberical / mixed datasets as well. But numberical attributes need to be discretized first.
 
