@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='sibyl',
     version='0.1.0',
-    author='StartupML Nov Cohort 2015',
+    author='StartupML',
 
 
     license='LICENSE.txt',
