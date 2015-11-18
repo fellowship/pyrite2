@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Sibyl from Startup.ML\n\n\nSibyl from \nStartup.ML\n is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions. \n\n\nOverview\n\n\n\n\n\n\nReal-World Dataset:\n\n\n\n\n\n\nPerformance:\n\n\n\n\n\n\nEnrichment:\n\n\n\n\n\n\nLicense\n\n\nGetting started\n\n\nInstallation", 
+            "text": "Sibyl\n\n\nSibyl from \nStartup.ML\n is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions. \n\n\nOverview\n\n\n\n\n\n\nReal-World Dataset:\n\n\n\n\n\n\nPerformance:\n\n\n\n\n\n\nEnrichment:\n\n\n\n\n\n\nLicense\n\n\nGetting started\n\n\nInstallation", 
             "title": "Home"
         }, 
         {
-            "location": "/#sibyl-from-startupml", 
+            "location": "/#sibyl", 
             "text": "Sibyl from  Startup.ML  is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.", 
-            "title": "Sibyl from Startup.ML"
+            "title": "Sibyl"
         }, 
         {
             "location": "/#overview", 
