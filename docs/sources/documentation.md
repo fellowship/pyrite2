@@ -1,4 +1,4 @@
-# Sibyl: Anomaly Detection in High Dimensional Heterogeneous Datasets
+## Sibyl: Anomaly Detection in High Dimensional Heterogeneous Datasets
 
 ## Introduction
 
