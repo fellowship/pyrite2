@@ -4,7 +4,7 @@ Sibyl from [Startup.ML](http://startup.ml) is an anomaly detection tool optimize
 
 ## Overview
 
-- __Real-World Dataset:__
+- __Real-World Data:__
 
 - __Performance:__
 
@@ -12,7 +12,7 @@ Sibyl from [Startup.ML](http://startup.ml) is an anomaly detection tool optimize
 
 ## License
 
-Please review the [license terms](https://raw.githubusercontent.com/startupml/sibyl/master/LICENSE.txt?token=AJUKypG9bJUtJ5lSIVYiLpdY3RbLHis2ks5WVd6ywA%3D%3D) before using and installing Sibyl.
+Please review the [license terms](https://github.com/startupml/sibyl/blob/master/LICENSE.txt) before installing and using Sibyl.
 
 ## Getting started
 
