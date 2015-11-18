@@ -2,8 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "", 
+            "text": "Sibyl: Anomaly Detection in High Dimensional Heterogeneous Datasets\n\n\nOverview\n\n\nSibyl is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.", 
             "title": "Home"
+        }, 
+        {
+            "location": "/#sibyl-anomaly-detection-in-high-dimensional-heterogeneous-datasets", 
+            "text": "", 
+            "title": "Sibyl: Anomaly Detection in High Dimensional Heterogeneous Datasets"
+        }, 
+        {
+            "location": "/#overview", 
+            "text": "Sibyl is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.", 
+            "title": "Overview"
         }, 
         {
             "location": "/documentation/", 
