@@ -1,4 +1,4 @@
-site_name: Sibyl Documentation
+site_name: Sibyl
 theme: readthedocs
 docs_dir: sources
 site_url: http://sibyl.startup.ml
