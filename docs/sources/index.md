@@ -6,11 +6,11 @@ Sibyl is an anomaly detection tool optimized for high-dimensional, heterogeneous
 
 ## Features
 
-- __Real-World Dataset.__
+- __Real-World Dataset:__
 
-- __Performance.__
+- __Performance:__
 
-- __Enrichment.__
+- __Enrichment:__
 
 ## License
 
