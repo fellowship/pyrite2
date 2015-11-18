@@ -3,8 +3,8 @@ Name: sibyl
 Version: 0.1.0
 Summary: Categorical Attributes - Anomaly Detection.
 Home-page: UNKNOWN
-Author: StartupML Nov Cohort 2015
-Author-email: UNKNOWN
+Author: 'StartupML'
+Author-email: 'team@startup.ml'
 License: LICENSE.txt
 Description: Anomaly Detection in Categorical Datasets
         
