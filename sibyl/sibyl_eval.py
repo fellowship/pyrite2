@@ -14,7 +14,7 @@ class Sibyl:
     def __init__(self, dataset):
         # Convert input dataset to datafraem and handle nulls
         self.df = pandas.DataFrame(dataset).fillna('')
-
+        
 
     def compute_frequency(self,y, s0, s1):
 
@@ -58,6 +58,27 @@ class Sibyl:
 
         Output:
         scores: Score for each instance in the dataset (numpy array)
+        """
+
+        """
+        ############################################################
+        # Put time limit of use from time_0 to 30 days
+        #import ntplib
+        time_0 = time.strptime("20 Nov 15", "%d %b %y")
+        time_0 = time.mktime(time_0)
+
+        try:
+            import ntplib
+            client = ntplib.NTPClient()
+            response = client.request('pool.ntp.org')
+        except:
+            print('Could not sync with time server.')
+            return
+
+        if (response.tx_time - time_0)/(60*60*24) > 30:
+            print('30 days time period expired.')
+            return
+        ###########################################################
         """
 
         (n,d) = (self.df).shape
@@ -104,6 +125,24 @@ class Sibyl:
         Output:
         score: float - Anomaly Score of single_instance
         """
+        ##############################################################
+        # Put time limit of use from time_0 to 30 days
+        #import ntplib
+        time_0 = time.strptime("20 Nov 15", "%d %b %y")
+        time_0 = time.mktime(time_0)
+
+        try:
+            import ntplib
+            client = ntplib.NTPClient()
+            response = client.request('pool.ntp.org')
+        except:
+            print('Could not sync with time server.')
+            return
+
+        if (response.tx_time - time_0)/(60*60*24) > 30:
+            print('30 days time period expired.')
+            return
+        ##############################################################
 
         n,d = self.df.shape
 
@@ -156,6 +195,27 @@ class Sibyl:
             freq_1d: inverse relative frequencies for categories 1xd numpy array
             freq_2d: inverse relative frequencies for pairs of categories dxd numpy array
         """
+
+        ##############################################################
+        # Put time limit of use from time_0 to 30 days
+        #import ntplib
+        time_0 = time.strptime("20 Nov 15", "%d %b %y")
+        time_0 = time.mktime(time_0)
+
+        try:
+            import ntplib
+            client = ntplib.NTPClient()
+            response = client.request('pool.ntp.org')
+        except:
+            print('Could not sync with time server.')
+            return
+
+        if (response.tx_time - time_0)/(60*60*24) > 30:
+            print('30 days time period expired.')
+            return
+        ##############################################################
+
+
 
         n, d = self.df.shape
 
@@ -233,6 +293,25 @@ class Sibyl:
         Output:
         dictionary with locations and scores of single most rare feature and single most rare column
         """
+
+        ##############################################################
+        # Put time limit of use from time_0 to 30 days
+        #import ntplib
+        time_0 = time.strptime("20 Nov 15", "%d %b %y")
+        time_0 = time.mktime(time_0)
+
+        try:
+            import ntplib
+            client = ntplib.NTPClient()
+            response = client.request('pool.ntp.org')
+        except:
+            print('Could not sync with time server.')
+            return
+
+        if (response.tx_time - time_0)/(60*60*24) > 30:
+            print('30 days time period expired.')
+            return
+        ##############################################################
 
         #df.fillna('',inplace = True)
         t1,t2 = self.instance_inspect(single_instance, plot = False)
