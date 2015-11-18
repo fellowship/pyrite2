@@ -2,18 +2,38 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Sibyl: Anomaly Detection in High Dimensional Heterogeneous Datasets\n\n\nOverview\n\n\nSibyl is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.", 
+            "text": "Sibyl Overview\n\n\nAnomaly Detection in High Dimensional Heterogeneous Datasets\n\n\nSibyl is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions. \n\n\nFeatures\n\n\n\n\n\n\nReal-World Dataset:\n\n\n\n\n\n\nPerformance:\n\n\n\n\n\n\nEnrichment:\n\n\n\n\n\n\nLicense\n\n\nGetting started\n\n\nInstallation", 
             "title": "Home"
         }, 
         {
-            "location": "/#sibyl-anomaly-detection-in-high-dimensional-heterogeneous-datasets", 
+            "location": "/#sibyl-overview", 
             "text": "", 
-            "title": "Sibyl: Anomaly Detection in High Dimensional Heterogeneous Datasets"
+            "title": "Sibyl Overview"
         }, 
         {
-            "location": "/#overview", 
+            "location": "/#anomaly-detection-in-high-dimensional-heterogeneous-datasets", 
             "text": "Sibyl is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.", 
-            "title": "Overview"
+            "title": "Anomaly Detection in High Dimensional Heterogeneous Datasets"
+        }, 
+        {
+            "location": "/#features", 
+            "text": "Real-World Dataset:    Performance:    Enrichment:", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/#license", 
+            "text": "", 
+            "title": "License"
+        }, 
+        {
+            "location": "/#getting-started", 
+            "text": "", 
+            "title": "Getting started"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "", 
+            "title": "Installation"
         }, 
         {
             "location": "/documentation/", 
