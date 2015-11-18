@@ -9,6 +9,6 @@ google_analytics: ['UA-70335803-1', 'sibyl.startup.ml']
 
 pages:
 - Home: index.md
-- Index: documentation.md
+- API: documentation.md
 - Examples: examples.md
 - FAQ: faq.md
