@@ -6,7 +6,7 @@ The Sibyl module, provides a way to discover anomalies in your categorical datas
 
 
 ## Methods Descriptions
-### 1- sibyl(dataset, ssamples_num, ssample_size, anomalies)
+#### sibyl(dataset, ssamples_num, ssample_size, anomalies)
 ```python
 anomaly_score = sibyl(dataset, ssamples_num, ssample_size, anomalies)
 ```
@@ -19,20 +19,20 @@ anomalies: Optional, the indexes of instances that you would like to see the mos
 
 The output is an anomaly_score list, where the i_th element in the list is the anomaly score for the i_th sample in the dataset.
 
-### 2- sibyl_score(single_instance, dataset, ssamples_num, ssample_size)
+#### sibyl_score(single_instance, dataset, ssamples_num, ssample_size)
 ```python
 anomaly_score_one_instance = sibyl_score(single_instance, dataset, ssamples_num, ssample_size)
 ```
 
 This method is essentially the same as the one above, except that it takes an extra input argument (single_instance), and it returns a single number, which is the anomaly_score for that instance by itself.
 
-### 3- get_feature_importance(single_instance,dataset)
+#### get_feature_importance(single_instance,dataset)
 ```python
 important_features = get_feature_importance(single_instance,dataset)
 ```
 It takes a single instance, and the dataset, as parameters, and returns the most important features and feature_pairs in a dictionary, that contribute the most to the anomaly_score.
 
-### 4- anomaly_inspect(single_instance,dataset, plot = False)
+#### anomaly_inspect(single_instance,dataset, plot = False)
 '''python
 anomaly_inspect(single_instance,dataset, plot = False)
 '''
