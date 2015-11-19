@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Sibyl\n\n\nSibyl from \nStartup.ML\n is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.\n\n\nLicense\n\n\nPlease review the \nlicense terms\n before installing and using Sibyl.\n\n\nGetting started\n\n\nInstallation", 
+            "text": "Sibyl\n\n\nSibyl from \nStartup.ML\n is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.\n\n\nGetting started\n\n\nInstallation\n\n\nPlease review the \nlicense terms\n before installing and using Sibyl.", 
             "title": "Home"
         }, 
         {
@@ -11,18 +11,13 @@
             "title": "Sibyl"
         }, 
         {
-            "location": "/#license", 
-            "text": "Please review the  license terms  before installing and using Sibyl.", 
-            "title": "License"
-        }, 
-        {
             "location": "/#getting-started", 
             "text": "", 
             "title": "Getting started"
         }, 
         {
             "location": "/#installation", 
-            "text": "", 
+            "text": "Please review the  license terms  before installing and using Sibyl.", 
             "title": "Installation"
         }, 
         {
