@@ -6,7 +6,6 @@ import time
 import matplotlib.pyplot as plt
 import time
 import os
-import ntplib
 
 class Sibyl:
 
