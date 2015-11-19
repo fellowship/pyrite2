@@ -4,8 +4,13 @@ Sibyl from [Startup.ML](http://startup.ml) is an anomaly detection tool optimize
 
 ### Getting started
 
+```
+from sibyl import Sibyl
+sibyl_data = Sibyl(pandas.read_csv('expanded.csv'))
+score_vec = sibyl_data.score_dataset(50, 100)
+```
+
 ### Installation
-## Installation
 
 Keras uses the following dependencies:
 
@@ -24,9 +29,8 @@ sudo python setup.py install
 ```
 Please review the [license terms](license.md) before installing and using Sibyl.
 
-
 ## Support
 
-You can ask questions and join the development discussion on the [Keras Google group](https://groups.google.com/forum/#!forum/keras-users).
+Please email your questions and comments to [Startup.ML](http://startup.ml/connect).
 
 
