@@ -72,23 +72,6 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#sibyl-anomaly-detection-in-high-dimensional-heterogeneous-datasets">Sibyl: Anomaly Detection in High Dimensional Heterogeneous Datasets</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#methods-descriptions">Methods Descriptions</a></li>
-                
-                    <li><a class="toctree-l4" href="#sibyldataset-ssamples_num-ssample_size-anomalies">sibyl(dataset, ssamples_num, ssample_size, anomalies)</a></li>
-                
-                    <li><a class="toctree-l4" href="#sibyl_scoresingle_instance-dataset-ssamples_num-ssample_size">sibyl_score(single_instance, dataset, ssamples_num, ssample_size)</a></li>
-                
-                    <li><a class="toctree-l4" href="#get_feature_importancesingle_instancedataset">get_feature_importance(single_instance,dataset)</a></li>
-                
-                    <li><a class="toctree-l4" href="#anomaly_inspectsingle_instancedataset-plot-false">anomaly_inspect(single_instance,dataset, plot = False)</a></li>
-                
-            
             </ul>
         
     </li>
@@ -140,35 +123,7 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="sibyl-anomaly-detection-in-high-dimensional-heterogeneous-datasets">Sibyl: Anomaly Detection in High Dimensional Heterogeneous Datasets</h2>
-<h2 id="introduction">Introduction</h2>
-<p>Sibyl provides a way to discover anomalies in categorical datasets. If your data contains numberical attributes mixed with categorical ones, the method can be extended to take care of that case as well. But first, any numerical attributes need to be discretized before being supplied to the Sibyl function. Sibyl also calculates the <strong><em>features</em></strong> and <strong><em>feature pairs</em></strong> that were the main contributers in the anomaly score of some instance y.</p>
-<h2 id="methods-descriptions">Methods Descriptions</h2>
-<h4 id="sibyldataset-ssamples_num-ssample_size-anomalies">sibyl(dataset, ssamples_num, ssample_size, anomalies)</h4>
-<pre><code class="python">anomaly_score = sibyl(dataset, ssamples_num, ssample_size, anomalies)
-</code></pre>
-
-<p>The main method of the sibyl module,  and it takes the following parameters as an input:
-dataset: The dataset consisting of categorical attributes.
-ssample_num: The number of subsamples that are randomly chosen for checking random subspaces.
-ssample_size: The subsample size.
-anomalies: Optional, the indexes of instances that you would like to see the most important features contributing to its anomaly score.</p>
-<p>The output is an anomaly_score list, where the i_th element in the list is the anomaly score for the i_th sample in the dataset.</p>
-<h4 id="sibyl_scoresingle_instance-dataset-ssamples_num-ssample_size">sibyl_score(single_instance, dataset, ssamples_num, ssample_size)</h4>
-<pre><code class="python">anomaly_score_one_instance = sibyl_score(single_instance, dataset, ssamples_num, ssample_size)
-</code></pre>
-
-<p>This method is essentially the same as the one above, except that it takes an extra input argument (single_instance), and it returns a single number, which is the anomaly_score for that instance by itself.</p>
-<h4 id="get_feature_importancesingle_instancedataset">get_feature_importance(single_instance,dataset)</h4>
-<pre><code class="python">important_features = get_feature_importance(single_instance,dataset)
-</code></pre>
-
-<p>It takes a single instance, and the dataset, as parameters, and returns the most important features and feature_pairs in a dictionary, that contribute the most to the anomaly_score.</p>
-<h4 id="anomaly_inspectsingle_instancedataset-plot-false">anomaly_inspect(single_instance,dataset, plot = False)</h4>
-<p>'''python
-anomaly_inspect(single_instance,dataset, plot = False)
-'''</p>
-<p>The same as the <em>get_feature_importance</em> method, but with the extra option of plotting the inverse relative frequency for anmalous features in 1D and 2D subspaces.</p>
+                
               
             </div>
           </div>
