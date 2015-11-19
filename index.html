@@ -75,6 +75,9 @@
                 <li class="toctree-l3"><a href="#installation">Installation</a></li>
                 
             
+                <li class="toctree-l3"><a href="#support">Support</a></li>
+                
+            
             </ul>
         
     </li>
@@ -143,8 +146,30 @@
                 <h3 id="sibyl-overview">Sibyl Overview</h3>
 <p>Sibyl from <a href="http://startup.ml">Startup.ML</a> is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.</p>
 <h3 id="getting-started">Getting started</h3>
+<pre><code>from sibyl import Sibyl
+sibyl_data = Sibyl(pandas.read_csv('expanded.csv'))
+score_vec = sibyl_data.score_dataset(50, 100)
+</code></pre>
+
 <h3 id="installation">Installation</h3>
+<p>Keras uses the following dependencies:</p>
+<ul>
+<li><strong>numpy</strong></li>
+<li><strong>pandas</strong></li>
+<li><strong>matplotlib</strong></li>
+</ul>
+<p>Once you have the dependencies installed, download the distro:</p>
+<pre><code class="bash">wget http://...
+</code></pre>
+
+<p>Go to the Sibyl folder and run the install command:</p>
+<pre><code class="bash">cd sibyl
+sudo python setup.py install
+</code></pre>
+
 <p>Please review the <a href="license/">license terms</a> before installing and using Sibyl.</p>
+<h2 id="support">Support</h2>
+<p>Please email your questions and comments to <a href="http://startup.ml/connect">Startup.ML</a>.</p>
               
             </div>
           </div>
@@ -192,5 +217,5 @@
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2015-11-19 16:46:47.962744
+Build Date UTC : 2015-11-19 17:00:09.347920
 -->

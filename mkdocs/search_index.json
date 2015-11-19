@@ -2,8 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Sibyl Overview\n\n\nSibyl from \nStartup.ML\n is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.\n\n\nGetting started\n\n\nInstallation\n\n\nPlease review the \nlicense terms\n before installing and using Sibyl.", 
+            "text": "Sibyl Overview\n\n\nSibyl from \nStartup.ML\n is an anomaly detection tool optimized for high-dimensional, heterogeneous (both categorical and continuous) datasets.   Its time complexity is near linear and space complexity is quadratic to the number of dimensions.\n\n\nGetting started\n\n\nfrom sibyl import Sibyl\nsibyl_data = Sibyl(pandas.read_csv('expanded.csv'))\nscore_vec = sibyl_data.score_dataset(50, 100)\n\n\n\n\nInstallation\n\n\nKeras uses the following dependencies:\n\n\n\n\nnumpy\n\n\npandas\n\n\nmatplotlib\n\n\n\n\nOnce you have the dependencies installed, download the distro:\n\n\nwget http://...\n\n\n\n\nGo to the Sibyl folder and run the install command:\n\n\ncd sibyl\nsudo python setup.py install\n\n\n\n\nPlease review the \nlicense terms\n before installing and using Sibyl.\n\n\nSupport\n\n\nPlease email your questions and comments to \nStartup.ML\n.", 
             "title": "Home"
+        }, 
+        {
+            "location": "/#support", 
+            "text": "Please email your questions and comments to  Startup.ML .", 
+            "title": "Support"
         }, 
         {
             "location": "/documentation/", 
