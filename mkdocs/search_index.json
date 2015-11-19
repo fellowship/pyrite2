@@ -47,12 +47,12 @@
         }, 
         {
             "location": "/examples/", 
-            "text": "Examples\n\n\nfrom sibyl import Sibyl\ndata = pandas.read_csv('expanded.csv', header=None)\n\n# Return anomaly score for every sample in the dataset\nsibyl_data = Sibyl(data)\nscore_vec = sibyl_data.score_dataset(50, 100)\n\n# Return anomaly score for a single random instance from the dataset\nrand_instance = data.iloc[30]\nscore_30 = sibyl_data.score_instance(rand_instance, 50, 100)", 
+            "text": "Examples\n\n\nfrom sibyl import Sibyl\ndata = pandas.read_csv('expanded.csv', header=None)\n\n# Return anomaly score for every sample in the dataset, sample 50 times and include 100 instances in each sample\nsibyl_data = Sibyl(data)\nscore_vec = sibyl_data.score_dataset(50, 100)\n\n# Return anomaly score for a single random instance from the dataset\nrand_instance = data.iloc[30]\nscore_30 = sibyl_data.score_instance(rand_instance, 50, 100)", 
             "title": "Examples"
         }, 
         {
             "location": "/examples/#examples", 
-            "text": "from sibyl import Sibyl\ndata = pandas.read_csv('expanded.csv', header=None)\n\n# Return anomaly score for every sample in the dataset\nsibyl_data = Sibyl(data)\nscore_vec = sibyl_data.score_dataset(50, 100)\n\n# Return anomaly score for a single random instance from the dataset\nrand_instance = data.iloc[30]\nscore_30 = sibyl_data.score_instance(rand_instance, 50, 100)", 
+            "text": "from sibyl import Sibyl\ndata = pandas.read_csv('expanded.csv', header=None)\n\n# Return anomaly score for every sample in the dataset, sample 50 times and include 100 instances in each sample\nsibyl_data = Sibyl(data)\nscore_vec = sibyl_data.score_dataset(50, 100)\n\n# Return anomaly score for a single random instance from the dataset\nrand_instance = data.iloc[30]\nscore_30 = sibyl_data.score_instance(rand_instance, 50, 100)", 
             "title": "Examples"
         }, 
         {
