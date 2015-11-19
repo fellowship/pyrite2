@@ -29,8 +29,6 @@ sudo python setup.py install
 ```
 Please review the [license terms](license.md) before installing and using Sibyl.
 
-## Support
+### Support
 
 Please email your questions and comments to [Startup.ML](http://startup.ml/connect).
-
-
