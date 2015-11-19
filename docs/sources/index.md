@@ -12,7 +12,7 @@ score_vec = sibyl_data.score_dataset(50, 100)
 
 ### Installation
 
-Keras uses the following dependencies:
+Sibyl uses the following dependencies:
 
 - __numpy__
 - __pandas__
