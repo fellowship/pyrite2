@@ -74,6 +74,9 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#instantiation">Instantiation</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#anomaly-scoring">Anomaly Scoring</a></li>
                 
             
@@ -138,44 +141,56 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="anomaly-scoring">Anomaly Scoring</h2>
-<p>Sibyl can be used to compute an anomaly score for each instance in the dataset, or for a single instance.</p>
+                <h2 id="instantiation">Instantiation</h2>
+<p>First, we provide a dataset to Sibyl while creating an instance of the class. The returned Sibyl object now has the dataframe loaded inside it and we can then run the Sibyl Anomaly Detection algorithm to detect anomalous instances in it. Dataframe is essentially a matrix with rows representing instances and columns representing features. Note that Sibyl can work with both categorical (e.g., city which can contain values such as 'San Francisco', 'Boston', etc.) and numerical features (e.g., income).</p>
+<ul>
+<li><strong>Methods</strong>:<ul>
+<li><strong>init</strong>(self, dataframe)</li>
+<li><strong>Arguments</strong>:<ul>
+<li>__dataframe: Pandas Dataframe</li>
+</ul>
+</li>
+<li><strong>Return</strong>: Sibyl object over which we detect anomalies</li>
+</ul>
+</li>
+</ul>
+<h2 id="anomaly-scoring">Anomaly Scoring</h2>
+<p>Once the dataframe is loaded, we randomly sample rows from the dataframe with replacement. The number of times we sample from the dataframe is controlled by: <code>sample_num</code> and number of instances picked in each sample is controlled by: <code>sample_size</code>. Sibyl can be used to compute an anomaly score for each instance in the dataset (via score_dataset), or for a single instance (via score_instance).</p>
 <ul>
 <li><strong>Methods</strong>:</li>
 <li><strong>score_dataset</strong>(sample_num, sample_size)<ul>
-<li><strong>Return</strong>: numpy.ndarray (a list where the i_th element is the anomaly score for the i_th instance in the dataset).</li>
 <li><strong>Arguments</strong>:</li>
 <li><strong>sample_num</strong>: int (number of random samples chosen without replacement from the dataset).</li>
 <li><strong>sample_size</strong>: int (size of the random sample)</li>
+<li><strong>Return</strong>: numpy.ndarray (a list where the i_th element is the anomaly score for the i_th instance in the dataset).</li>
 </ul>
 </li>
 <li><strong>score_instance</strong>(single_instance, sample_num, sample_size)<ul>
-<li><strong>Return</strong>: float (Anomaly score for the single instance)</li>
 <li><strong>Arguments</strong>:</li>
 <li><strong>single_instance</strong>: pandas.Series (a single instance for which the anomaly score is to be computed)</li>
 <li><strong>sample_num</strong>: int (number of random samples chosen without replacement from the dataset)</li>
 <li><strong>sample_size</strong>: int (size of the random sample)</li>
+<li><strong>Return</strong>: float (Anomaly score for the single instance)</li>
 </ul>
 </li>
 </ul>
-<hr />
 <h2 id="feature-importance">Feature Importance</h2>
-<p>Sibyl provides a way to further explore the anomalous instances in a dataset, through supplying a list of features, and feature-pairs, that contribte most in its anomaly score and thus gain insight on why an instance was classified as an anomaly.</p>
+<p>Sibyl provides a way to further explore the anomalous instances in a dataset, through supplying a list of features, and feature-pairs, that contribute the most in its anomaly score and thus gain insights on why an instance was classified as an anomaly.</p>
 <ul>
 <li><strong>Methods</strong>:</li>
 <li><strong>get_feature_importance</strong>(single_instance)<ul>
-<li><strong>Return</strong>: A dictionary consisting of the most important single feature in the anomaly score, as well as the single most important pair of features.</li>
 <li><strong>Arguments</strong>:</li>
 <li><strong>single_instance</strong>: pandas.Series (a single instance for which the anomaly score is to be computed)</li>
+<li><strong>Return</strong>: A dictionary consisting of the most important single feature in the anomaly score, as well as the single most important pair of features.</li>
 </ul>
 </li>
 <li><strong>instance_inspect</strong>(single_instance, plot)<ul>
-<li><strong>Return</strong>:</li>
-<li><strong>freq_1d</strong>: ndarray, containing the inverse relative frequency for each single feautre.</li>
-<li><strong>freq_2d</strong>: dxd ndarray, where ith column and jth row corresponds to the anomaly score due to features i and j.</li>
 <li><strong>Arguments</strong>:</li>
 <li><strong>single_instance</strong>: pandas.Series (a single instance for which the anomaly score is to be computed)</li>
 <li><strong>plot</strong>: Boolean, to show plots of the freq_1d and freq_2d values</li>
+<li><strong>Return</strong>:</li>
+<li><strong>freq_1d</strong>: ndarray, containing the inverse relative frequency for each single feautre.</li>
+<li><strong>freq_2d</strong>: dxd ndarray, where ith column and jth row corresponds to the anomaly score due to features i and j.</li>
 </ul>
 </li>
 </ul>
