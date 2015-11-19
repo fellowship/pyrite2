@@ -1,4 +1,4 @@
-### 1. Definitions. 
+### 1. Definitions 
 
 __Documentation__ means the user guide, help information and/or other documentation generally provided by Licensor to licensees of the Software.   
 
@@ -10,7 +10,7 @@ __Subscription Fee__ means the annual fee set out in the Sales Order payable for
 
 __Startup.ML Code__ means Startup.ML’s proprietary computer programs (in object code) that are specifically identified in the Sales Order or otherwise intentionally delivered to Licensee under this Agreement (e.g., updates delivered pursuant to the support and maintenance services). 
 
-### 2. License. 
+### 2. License 
 
 __2.1 Software.__ Subject to all terms and conditions in this Agreement, Licensor grants to Licensee a nonexclusive, nontransferable, nonsublicenseable right and license to use the Software and the Documentation for internal business purposes for the Subscription Term specified in the Sales Order.   
 
@@ -20,11 +20,11 @@ __2.3 License Control.__ Licensee acknowledges that the Software may contain cod
 
 __2.4 Support.__ For so long as Licensee is current in payment of all Subscription Fees and subject to the terms and conditions of this Agreement, Licensee will receive support and maintenance services in accordance with Startup.ML’s standard policy in effect at the commencement date of the Subscription Term. 
 
-### 3. Implementation and Services. 
+### 3. Implementation and Services
 
 __3.1 Licensor.__ To the extent expressly specified in the Sales Order, Licensor shall (a) implement the Software (“Implementation Services”) and (b) perform the professional services (the “Professional Services”). Licensor may use third party subcontractors in providing the Implementation Services and Professional Services. Licensor shall be responsible for the performance of such subcontractors. 
 
-### 4. Payments. 
+### 4. Payments
 
 __4.1 Fees.__ Licensee agrees to pay Licensor the Subscription Fees and any applicable Implementation Services Fees and Professional Services Fees (together, “Fees”), in the amounts and at the times specified in the Sales Order.    
 
@@ -34,13 +34,13 @@ __4.3 Taxes.__ All payments required by this Agreement are exclusive of federal,
 
 __4.4 Audit.__ Upon reasonable advance written notice, Licensor shall have the right to have a quarterly audit of Licensee’s use of the Software to verify Licensee’s compliance with this Agreement. Licensee shall make its systems and all applicable books, records and transaction logs available for such inspection during normal business hours at Licensee’s principal place of business. Any audit shall be at Licensor’s expense, unless it discloses an underpayment by Licensee for the audited period in excess of 5%, in which case Licensee shall reimburse Licensor for such expenses. 
 
-### 5. Confidentiality. 
+### 5. Confidentiality 
 
 __5.1 Scope.__ The term Confidential Information means all trade secrets, know-how, inventions, developments, software and other financial, business or technical information of Licensor (or any of its licensors or customers) that is disclosed by or for Licensor or that is otherwise learned or accessed by Licensee, but not including any information that Licensee can demonstrate is (a) rightfully furnished to it without restriction by a third party without breach of any separate obligation to Licensor, (b) generally available to the public without breach of this Agreement or (c) independently developed by it without reliance on such information.   
 
 __5.2 Confidentiality.__ Except for the specific rights granted by this Agreement, Licensee shall not possess, use or disclose any Confidential Information without Licensor’s prior written consent, and shall use reasonable care to protect the Confidential Information. Licensee may only disclose Confidential Information to its employees and contractors who have a need to know for the purposes of this Agreement and who are bound by confidentiality obligations that are at least as protective as the provisions herein. Licensee shall be responsible for any breach of confidentiality by its employees and contractors. Promptly after any termination of this Agreement (or at Licensor’s request at any other time), Licensee shall return all tangible Confidential Information, permanently erase all Confidential Information from any storage media and destroy all information, records and materials developed therefrom. 
 
-### 6. Proprietary Rights. 
+### 6. Proprietary Rights
 
 __6.1 Restrictions.__ Except as specifically permitted in this Agreement, Licensee shall not directly or indirectly: (a) use any Confidential Information to create any software or documentation that is similar to any Software or Documentation; (b) disassemble, decompile, reverse engineer or use any other means to attempt to discover any source code or underlying ideas, algorithms or organization of the Software (except and only to the extent that these restrictions are expressly prohibited by applicable statutory law); (c) encumber, loan, lease, rent, sublicense, transfer or distribute any Software, or use the Software for the benefit of any third party (e.g., service bureau arrangement); (d) copy, create derivative works of or otherwise modify any Software or Documentation; (e) use or allow the transfer, transmission, export or re-export of all or any part of the Software (or any product thereof) in violation of any export control laws or regulations of the United States or any other relevant jurisdiction; or (f) permit any third party to do any of the foregoing. Licensee will promptly notify Licensor in writing of any unauthorized use, reproduction or distribution of any Software.   
 
@@ -50,7 +50,7 @@ __6.3 Markings.__ Licensee shall not (and shall not permit any third party to) a
 
 __6.4 Third Party Code.__ The Startup.ML Code may operate, interface or be delivered with software or other technology that is identified in the Documentation (“Third Party Code”) and licensed from and owned by third parties (“Third Party Licensors”). Licensee agrees that (a) it will use Third Party Code in accordance with this Agreement (unless different terms are specified in the applicable license set forth or referenced in the Documentation), (b) no Third Party Licensor makes any representation or warranty to Licensee concerning the Software, and (c) no Third Party Licensor will have any obligation or liability to Licensee as a result of this Agreement or Licensee’s use of the Software. Upon Licensee’s specific written request received during the term of this Agreement, Licensor will make available the source code for Third Party Code, but only if such source code was made available to Startup.ML and doing so is required by the applicable license. 
 
-### 7. Warranty and Disclaimers. 
+### 7. Warranty and Disclaimers 
 
 __7.1 Software.__ Licensor warrants to Licensee that the unaltered Startup.ML Code will operate substantially in conformance with the Documentation for 90 days after the Effective Date. Any warranty claim under this Section 7.1 must be made in writing to Licensor during such 90-day period. Licensor’s sole obligation and Licensee’s exclusive remedy in respect thereof is to use reasonable efforts to repair or replace the Startup.ML Code that Licensor determines, in its reasonable judgment, is nonconforming or, at Licensor’s sole discretion, to accept return of the nonconforming Startup.ML Code and upon receipt thereof, Licensor shall refund to Licensee the amount that Licensee paid therefor.   
 
@@ -58,7 +58,7 @@ __7.2 Exclusions.__ The foregoing warranty shall apply only to the Startup.ML Co
 
 __7.3 Disclaimers.__ EXCEPT AS EXPRESSLY SPECIFIED HEREIN, THE SOFTWARE, DOCUMENTATION AND SUPPORT SERVICES ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE COMPATIBLE WITH ANY LICENSEE APPLICATION OR ENVIRONMENT OR OTHERWISE MEET LICENSEE’S REQUIREMENTS, OR THAT OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE.   TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ON BEHALF OF ITSELF AND ITS LICENSORS, LICENSOR HEREBY DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, ORAL OR WRITTEN, INCLUDING WITHOUT LIMITATION, ALL IMPLIED WARRANTIES OF TITLE, NON-INFRINGEMENT, INTEGRATION, ACCURACY, MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE AND ALL WARRANTIES ARISING FROM ANY COURSE OF DEALING OR PERFORMANCE OR USAGE OF TRADE. 
 
-### 8. Indemnification. 
+### 8. Indemnification 
 
 __8.1 Infringement.__ Except as provided below, Licensor agrees to defend Licensee against any claim by a third party that the Startup.ML Code infringes a valid US patent (issued as of the Effective Date), or any copyright or trade secret, of such third party, and to indemnify Licensee for settlement amounts or damages, liabilities, costs and expenses (including reasonable attorneys’ fees) awarded and arising out of such claim; provided, that (a) Licensee promptly gives Licensor written notice thereof and reasonable cooperation, information, and assistance in connection therewith, and (b) Licensor shall have sole control and authority to defend, settle or compromise such claim. If any Software becomes or, in Licensor’s opinion, is likely to become the subject of any injunction preventing its use as contemplated herein, Licensor may, at its option (1) obtain for Licensee the right to continue using such Startup.ML Code, or (2) replace or modify such Startup.ML Code so that it becomes non-infringing without substantially compromising its principal functions. If (1) and (2) are not reasonably available to Licensor, then Licensor may (3) terminate this Agreement upon written notice and, after return of the Software, refund to Licensee the pre-paid Subscription Fees, pro-rated for the remainder of the Subscription Term for which such fees have been pre-paid.   
 
@@ -66,11 +66,11 @@ __8.2 Exclusions.__ Licensor shall have no liability or obligation to Licensee h
 
 __ 8.3 Entire Liability.__ The foregoing states Licensor’s entire liability, and Licensee’s exclusive remedy, with respect to any actual or alleged violation of intellectual property rights by the Software or any part thereof or by its use or operation. 
 
-### 9. Limitation of Liability. 
+### 9. Limitation of Liability 
 
 LICENSOR (AND ITS LICENSORS) SHALL NOT BE LIABLE CONCERNING THE SUBJECT MATTER OF THIS AGREEMENT (INCLUDING THE INDEMNIFICATION), REGARDLESS OF THE FORM OF ANY CLAIM OR ACTION (WHETHER IN CONTRACT, NEGLIGENCE, STRICT LIABILITY OR OTHERWISE), FOR ANY (A) MATTER BEYOND ITS REASONABLE CONTROL, (B) LOSS OR INACCURACY OF DATA, LOSS OR INTERRUPTION OF USE, OR COST OF PROCURING SUBSTITUTE TECHNOLOGY, GOODS OR SERVICES, (C) INDIRECT, PUNITIVE, INCIDENTAL, RELIANCE, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF BUSINESS, REVENUES, PROFITS OR GOODWILL, OR (D) DAMAGES, IN THE AGGREGATE, IN EXCESS OF THE SUBSCRIPTION FEES PAID BY LICENSEE TO LICENSOR FOR THE SOFTWARE GIVING RISE TO SUCH DAMAGES DURING THE 12-MONTH PERIOD PRIOR TO THE DATE THE CAUSE OF ACTION AROSE, EVEN IF IT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THESE LIMITATIONS ARE INDEPENDENT FROM ALL OTHER PROVISIONS OF THIS AGREEMENT AND SHALL APPLY NOTWITHSTANDING THE FAILURE OF ANY REMEDY PROVIDED HEREIN. 
 
-### 10. Term and Termination. 
+### 10. Term and Termination
 
 __10.1 Term.__ This Agreement shall commence on the Effective Date and continue in effect for the Subscription Term unless specified otherwise in the Sales Order. Thereafter, and unless otherwise specified in the Order Form, this Agreement shall automatically renew for the same Subscription Term duration specified in the initial Sales Order unless either party notifies the other in writing of its intention not to renew by no later than sixty (60) days before the expiration of the then-current term.   
 
@@ -78,7 +78,7 @@ __10.2 Termination.__ This Agreement may be terminated (a) by either party if th
 
 __10.3 Effects of Termination.__ Upon termination of this Agreement for any reason, all rights, obligations and licenses of the parties hereunder shall cease, except that (a) all obligations that accrued prior to the effective date of termination and any remedies for breach of this Agreement shall survive any termination, (b) Licensee shall promptly return or destroy all Software and other tangible Confidential Information, and permanently erase all Confidential Information from any computer and storage media, and (c) the provisions of Sections 4 (Payments), 5 (Confidentiality), 6 (Proprietary Rights), 7 (Warranty and Disclaimers), 8 (Indemnification), 9 (Limitation of Liability), 11 (General Provisions) and this Section 10.3 shall also survive. 
 
-### 11. General Provisions. 
+### 11. General Provisions
 
 __11.1 Entire Agreement.__ This Agreement including the Sales Order, constitutes the entire agreement, and supersedes all prior negotiations, understandings or agreements (oral or written), between the parties about the subject matter of this Agreement. Terms set forth in any Licensee’s document that are in addition to or at variance with the terms of this Agreement are specifically waived by Licensee. All such terms are considered to be proposed material alterations of this Agreement and are hereby rejected. No waiver, consent or modification of this Agreement shall bind either party unless in writing and signed by the party against which enforcement is sought, except the terms of this Agreement may be modified by Licensor from time to time so long as they do not result in a diminution of the rights granted hereunder. The most recent revision of this Agreement will be posted on http://sibyl.startup.ml/license/. By downloading updates delivered pursuant to the support and maintenance services, Licensee agrees to be bound by the terms of the Agreement then in effect. The failure of either party to enforce its rights under this Agreement at any time for any period will not be construed as a waiver of such rights. If any provision of this Agreement is determined to be illegal or unenforceable, that provision will be limited or eliminated to the minimum extent necessary so that this Agreement will otherwise remain in full force and effect and enforceable. This Agreement is in English only, which shall be controlling in all respects. No version of this Agreement in another language shall be binding or of any effect.   
 
