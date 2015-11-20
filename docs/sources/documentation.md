@@ -15,7 +15,7 @@ Once the dataframe is loaded, we randomly sample rows from the dataframe with re
         - __sample_num__: int (number of random samples chosen without replacement from the dataset).
         - __sample_size__: int (size of the random sample)
     - __Return__: numpy.ndarray (a list where the i_th element is the anomaly score for the i_th instance in the dataset).
-
+*****
 - __score_instance__(single_instance, sample_num, sample_size)
     - __Arguments__:
         - __single_instance__: pandas.Series (a single instance for which the anomaly score is to be computed)
@@ -31,6 +31,7 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
     - __Arguments__:
         - __single_instance__: pandas.Series (a single instance for which the anomaly score is to be computed)
     - __Return__: A dictionary consisting of the most important single feature in the anomaly score, as well as the single most important pair of features.
+*****
 - __instance_inspect__(single_instance, plot)
     - __Arguments__:
         - __single_instance__: pandas.Series (a single instance for which the anomaly score is to be computed)
