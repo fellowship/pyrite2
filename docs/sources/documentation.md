@@ -9,6 +9,7 @@ Sibyl class takes a single argument (a Pandas DataFrame) when initialized.  The 
     - __Arguments__:
 
         - __dataframe__: Pandas Dataframe
+        
     - __Return__: Sibyl object over which we detect anomalies
 
 ### Anomaly Scoring
@@ -22,6 +23,7 @@ Once the dataframe is loaded, we randomly sample rows from the dataframe with re
 
       - __sample_num__: int (number of random samples chosen without replacement from the dataset).
       - __sample_size__: int (size of the random sample)
+      
     - __Return__: numpy.ndarray (a list where the i_th element is the anomaly score for the i_th instance in the dataset).
   - __score_instance__(single_instance, sample_num, sample_size)
 
@@ -30,6 +32,7 @@ Once the dataframe is loaded, we randomly sample rows from the dataframe with re
       - __single_instance__: pandas.Series (a single instance for which the anomaly score is to be computed)
       - __sample_num__: int (number of random samples chosen without replacement from the dataset)
       - __sample_size__: int (size of the random sample)
+      
     - __Return__: float (Anomaly score for the single instance)
 
 ### Feature Importance
@@ -43,14 +46,16 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
       - __Arguments__:
       
       - __single_instance__: pandas.Series (a single instance for which the anomaly score is to be computed)
+     
       - __Return__: A dictionary consisting of the most important single feature in the anomaly score, as well as the single most important pair of features.
       - 
   - __instance_inspect__(single_instance, plot)
   
     - __Arguments__:
-    
+
       - __single_instance__: pandas.Series (a single instance for which the anomaly score is to be computed)
       - __plot__: Boolean, to show plots of the freq_1d and freq_2d values
+
     - __Return__:
       - __freq_1d__: ndarray, containing the inverse relative frequency for each single feautre.
       - __freq_2d__: dxd ndarray, where ith column and jth row corresponds to the anomaly score due to features i and j.
