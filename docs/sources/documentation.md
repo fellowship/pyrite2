@@ -48,3 +48,12 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
     - __Return__:
       - __freq_1d__: ndarray, containing the inverse relative frequency for each single feautre.
       - __freq_2d__: dxd ndarray, where ith column and jth row corresponds to the anomaly score due to features i and j.
+      - 
+### Preprocessing
+
+Discretization of numeric features can be done manually or as a pre-processing step within Sibyl.
+
+- __Methods__:
+  - 
+
+      
