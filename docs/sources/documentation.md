@@ -46,6 +46,7 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
       - __Arguments__:
       
       - __single_instance__: pandas.Series (a single instance for which the anomaly score is to be computed)
+      
       - __Return__: A dictionary consisting of the most important single feature in the anomaly score, as well as the single most important pair of features.
       - 
   - __instance_inspect__(single_instance, plot)
