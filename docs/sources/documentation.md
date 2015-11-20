@@ -55,8 +55,9 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
 
       - __single_instance__: pandas.Series (a single instance for which the anomaly score is to be computed)
       - __plot__: Boolean, to show plots of the freq_1d and freq_2d values
-      
+ 
     - __Return__:
+    
       - __freq_1d__: ndarray, containing the inverse relative frequency for each single feautre.
       - __freq_2d__: dxd ndarray, where ith column and jth row corresponds to the anomaly score due to features i and j.
 
