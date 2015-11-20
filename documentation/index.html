@@ -159,9 +159,7 @@
 <h3 id="anomaly-scoring">Anomaly Scoring</h3>
 <p>Once the dataframe is loaded, we randomly sample rows from the dataframe with replacement. The number of times we sample from the dataframe is controlled by: <code>sample_num</code> and number of instances picked in each sample is controlled by: <code>sample_size</code>. Sibyl can be used to compute an anomaly score for each instance in the dataset (via score_dataset), or for a single instance (via score_instance).</p>
 <ul>
-<li>
-<p><strong>score_dataset</strong>(sample_num, sample_size)</p>
-<ul>
+<li><strong>score_dataset</strong>(sample_num, sample_size)<ul>
 <li><strong>Arguments</strong>:<ul>
 <li><strong>sample_num</strong>: int (number of random samples chosen without replacement from the dataset).</li>
 <li><strong>sample_size</strong>: int (size of the random sample)</li>
@@ -170,9 +168,10 @@
 <li><strong>Return</strong>: numpy.ndarray (a list where the i_th element is the anomaly score for the i_th instance in the dataset).</li>
 </ul>
 </li>
-<li>
-<p><strong>score_instance</strong>(single_instance, sample_num, sample_size)</p>
+</ul>
+<hr />
 <ul>
+<li><strong>score_instance</strong>(single_instance, sample_num, sample_size)<ul>
 <li><strong>Arguments</strong>:<ul>
 <li><strong>single_instance</strong>: pandas.Series (a single instance for which the anomaly score is to be computed)</li>
 <li><strong>sample_num</strong>: int (number of random samples chosen without replacement from the dataset)</li>
@@ -194,6 +193,9 @@
 <li><strong>Return</strong>: A dictionary consisting of the most important single feature in the anomaly score, as well as the single most important pair of features.</li>
 </ul>
 </li>
+</ul>
+<hr />
+<ul>
 <li><strong>instance_inspect</strong>(single_instance, plot)<ul>
 <li><strong>Arguments</strong>:<ul>
 <li><strong>single_instance</strong>: pandas.Series (a single instance for which the anomaly score is to be computed)</li>
