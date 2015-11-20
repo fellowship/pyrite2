@@ -8,7 +8,7 @@ Sibyl class takes a single argument (a Pandas DataFrame) when initialized.  The 
 
     - __Arguments__:
 
-        - __dataframe: Pandas Dataframe
+        - __dataframe__: Pandas Dataframe
     - __Return__: Sibyl object over which we detect anomalies
 
 ### Anomaly Scoring
