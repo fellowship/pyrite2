@@ -25,7 +25,7 @@ abalone_data = pandas.read_csv('abalone.data',header = None)
 abalone_sibyl = Sibyl(abalone_data)
 
 # Perform discretization for numerical attributes (from 1 - 8)
-cont_cols = [1,2,3,4,5,6,7,8]
+cont_cols = range(1,9)
 abalone_sibyl.discretize(cont_cols)
 
 # Return anomaly score for every sample in the dataset, sample 50
