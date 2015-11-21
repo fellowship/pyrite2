@@ -6,13 +6,61 @@ import time
 import matplotlib.pyplot as plt
 import time
 import os
+import ntplib
+from astroML.plotting import hist
 
 class Sibyl:
 
 
     def __init__(self, dataset):
         # Convert input dataset to datafraem and handle nulls
-        self.df = pandas.DataFrame(dataset).fillna('')
+        # Store dataset in self.df
+        self.df = pandas.DataFrame(dataset.copy())
+
+
+    def auto_discretize(self,num_data,method,range_min_max):
+
+        """
+        Perform automatic discretization of a selected feature; a method
+        (bayesian blocks, scott method or fixed bin number) along the desired data range is passed to a special version of hist which gives cutpoints for discretization and returns the "categorized" version of the original data
+        """
+        hist_data = hist(num_data, bins=method,range=range_min_max)
+        plt.close('all')
+        leng = len(hist_data[1])
+        # fix cutoff to make sure outliers are properly categorized as well if necessary
+        hist_data[1][leng-1] = num_data.max()
+        #hist_data[1][0] = num_data.min()
+        # automatically assign category labels of '1','2',etc
+        cat_data = pandas.cut(num_data,hist_data[1],labels=range(1,leng),include_lowest='TRUE')
+        return pandas.Series(cat_data).astype(str)
+
+    def discretize(self, columns, method = 'blocks'):
+        """
+    Discretizes user provided list of numerical columns using auto_discretization function above. If a different method for discretization is desired, for a specific column range, this function should be called on a per column basis with parameters set for each particular column
+
+        Input:
+        columns: list of columns to dicretize.
+        method: default method is 'blocks' (Bayesian blocks), other options is 'scott' or fixed number of bins
+        plot: if True - plot histogram, default = False
+
+        Output:
+        None, changes columns in the self.df data frame.
+
+        """
+
+        numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
+
+
+        for col in columns:
+            if not(self.df[col].dtype in numerics):
+                err = 'Column ' + str(col) + ' is not numeric!'
+                raise Exception(err)
+
+        num_cols = len(columns)
+        for col in columns:
+            col_range = (self.df[col].min(),self.df[col].max())
+            self.df[col] = self.auto_discretize(self.df[col], method, range_min_max = col_range)
+
 
 
     def compute_frequency(self,y, s0, s1):
@@ -44,16 +92,17 @@ class Sibyl:
 
         return 0
 
-    ###################################################################################################################
 
 
-    def score_dataset(self, samples_num, sample_size):
+
+    def score_dataset(self, samples_num, sample_size,seed = None):
         """
         Returns a numpy array of scores for every instance in the dataset
 
         Input:
         samples_num: number of subsamples chosen randomly without replacement
         sample_size: size of each subsample
+        seed: seed for random number generator
 
         Output:
         scores: Score for each instance in the dataset (numpy array)
@@ -61,11 +110,13 @@ class Sibyl:
 
         (n,d) = (self.df).shape
         columns = (self.df).columns
+        indices = (self.df).index
 
         zeros = numpy.zeros(d)
         scores = numpy.zeros(n)
         global theta
 
+        random.seed(seed)
         # Loop over all subsamples
         for i in range(0,samples_num):
             #create a subsample of indices
@@ -88,15 +139,18 @@ class Sibyl:
             numpy.apply_along_axis(self.compute_frequency, 1,diDF, s0,s1)
             scores = scores + numpy.sum(theta == zeros,axis = 1)
 
-        return 1.0*scores/samples_num/d
 
-    #######################################################################################################################
-    def score_instance(self, single_instance, samples_num, sample_size):
+        return pandas.Series(1.0*scores/samples_num/d, index = indices)
+
+
+
+
+    def score_instance(self, idx, samples_num, sample_size, seed = None):
         """
         Same as sybil but scores a single instance.
 
         Input:
-        single_instance: instance whose score is desired
+        idx: Index of the instance whose score is desired
         samples_num: number of subsamples chosen randomly without replacement
         sample_size: size of each subsample
 
@@ -106,14 +160,15 @@ class Sibyl:
 
         n,d = self.df.shape
 
-        y = single_instance.fillna('')
+        #y = single_instance.fillna('')
 
-        y = numpy.array(y)
+        y = numpy.array(self.df.ix[idx])
         df_ndarray = numpy.array(self.df)
 
         zeros = numpy.zeros(d)
         score = 0
 
+        random.seed(seed)
         # Loop over all subsamples
         for i in range(0,samples_num):
 
@@ -135,19 +190,16 @@ class Sibyl:
 
         return 1.0*score/samples_num/d
 
-    #########################################################################################################################
 
-
-    def instance_inspect(self, single_instance, plot = False):
+    def instance_inspect(self, idx, plot = False):
         """
         Compute the inverse relative frequency of a category (pair of categories) in each column (pairs of columns)
         for categories in an anomalous instance index by idx.
-        inverse relative frequency = total # of instances/(# of instances with fixed category
-                                                            X # of categories for that feature )
+        inverse relative frequency = total # of instances/(# of instances with fixed category X # of categories for that feature )
         Plot relative frequencies (optional).
 
         Input:
-        single_instance: a single instance to inspect.
+        idx: index of a single instance to inspect.
         plot: Boolean - plot inverse relative frequency
 
         Output:
@@ -155,10 +207,8 @@ class Sibyl:
             freq_1d: inverse relative frequencies for categories 1xd numpy array
             freq_2d: inverse relative frequencies for pairs of categories dxd numpy array
         """
-
         n, d = self.df.shape
 
-        y = single_instance.fillna('')
 
         colnames = self.df.columns
         sizes = []
@@ -166,7 +216,7 @@ class Sibyl:
             sizes = sizes + [len(self.df[c].unique())]
         sizes = numpy.array(sizes)
 
-        y = numpy.array(y)
+        y = numpy.array(self.df.ix[idx])
         df_ndarray = numpy.array(self.df)
 
 
@@ -196,7 +246,7 @@ class Sibyl:
                          '(frequency of specified category times number of categories)\n'+
                          'for each column',
                             fontsize =16,)
-            xTickMarks = [str(colnames[i]) + ': ' + y[i] for i in range(0,d)]
+            xTickMarks = [str(colnames[i]) + ': ' + str(y[i]) for i in range(0,d)]
             ax.set_xticks(numpy.array(range(0,d))+0.5)
             xtickNames = ax.set_xticklabels(xTickMarks)
             plt.setp(xtickNames, rotation=90, fontsize=10)
@@ -208,7 +258,7 @@ class Sibyl:
                           'for each column',
                              fontsize = 16)
             im = ax1.imshow(freq_2d.T,interpolation = "none")
-            tickMarks = [str(colnames[i]) + ': ' + y[i] for i in range(0,d)]
+            tickMarks = [str(colnames[i]) + ': ' + str(y[i]) for i in range(0,d)]
             ax1.set_xticks(numpy.array(range(0,d))+0)
             ax1.set_yticks(numpy.array(range(0,d))+0)
             xtickNames = ax1.set_xticklabels(tickMarks)
@@ -220,21 +270,22 @@ class Sibyl:
 
         return (freq_1d,freq_2d)
 
-    ##############################################################################################################
 
-    def get_feature_importance(self, single_instance):
+
+
+
+    def get_feature_importance(self, idx):
         """
         Calls instance_inspect, selects maximum elements of the tables and organizes output into dictionary
 
         Input:
-        single_instance: index of anomaly in the data frame df
+        idx: index of anomaly in the data frame df
 
         Output:
         dictionary with locations and scores of single most rare feature and single most rare column
         """
 
-        #df.fillna('',inplace = True)
-        t1,t2 = self.instance_inspect(single_instance, plot = False)
+        t1,t2 = self.instance_inspect(idx, plot = False)
         columns = list(self.df.columns)
         d1_score = t1.max()
         d1_loc = [columns[i] for i in numpy.where(t1 == t1.max())[0]]
@@ -243,4 +294,5 @@ class Sibyl:
         d2_loc = numpy.where(t2 == t2.max())
         d2_loc = [(columns[d2_loc[0][i]],columns[d2_loc[1][i]]) for i in range(len(d2_loc[0]))]
         return {'single feature':(d1_loc,d1_score),'pair features':(d2_loc,d2_score)}
+
 

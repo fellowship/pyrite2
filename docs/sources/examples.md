@@ -26,7 +26,6 @@ print(mushroom_sibyl.get_feature_importance(anomaly_score_highest))
 
 # For further inspection of other features and feature-pairs in terms of contribution to the total anomaly score: *instance_inspect* returns the contribution of each single feature, and feature-pair, in the total anomaly score for a specific instance.
 mushroom_sibyl.instance_inspect(anomaly_score_highest, plot=True)
-
 ```
 
 For the example above, *instance_inspect* produces the following plot:
