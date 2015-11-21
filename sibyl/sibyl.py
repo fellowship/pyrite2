@@ -44,6 +44,7 @@ class Sibyl:
         None, changes columns in the self.df data frame.
 
         """
+        print "\ndiscretizing numerical attributes ..."
 
         numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
 
@@ -104,6 +105,7 @@ class Sibyl:
         Output:
         scores: Score for each instance in the dataset (numpy array)
         """
+        print "\ncomputing anomaly score for the dataset instances ..."
 
         (n,d) = (self.df).shape
         columns = (self.df).columns
@@ -143,6 +145,7 @@ class Sibyl:
 
 
     def score_instance(self, idx, samples_num, sample_size, seed = None):
+
         """
         Same as sybil but scores a single instance.
 
@@ -154,6 +157,8 @@ class Sibyl:
         Output:
         score: float - Anomaly Score of single_instance
         """
+
+        print "\ncomputing anomaly score contribution of features and feature pairs ..."
 
         n,d = self.df.shape
 
@@ -281,7 +286,7 @@ class Sibyl:
         Output:
         dictionary with locations and scores of single most rare feature and single most rare column
         """
-
+        print "\ngetting important features ..."
         t1,t2 = self.instance_inspect(idx, plot = False)
         columns = list(self.df.columns)
         d1_score = t1.max()
