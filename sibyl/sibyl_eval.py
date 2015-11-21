@@ -174,7 +174,7 @@ class Sibyl:
         score: float - Anomaly Score of single_instance
         """
 
-    print "\ncomputing anomaly score contribution of features and feature pairs ..."
+        print "\ncomputing anomaly score contribution of features and feature pairs ..."
 
 
         n,d = self.df.shape

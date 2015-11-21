@@ -35,14 +35,12 @@ score_vec = abalone_sibyl.score_dataset(50, 100)
 
 # convert to numpy array to plot the histogram of the scores
 score_array = score_vec.values
-n, bins, patches = plt.hist(score_array, 15, normed=1, facecolor='g', alpha=0.75)
+score_hist = numpy.histogram(score_array)
 
-
-plt.xlabel('Anomaly Scores')
-plt.ylabel('Number of samples')
-plt.title('Histogram of Anomaly Scores for the Dataset')
-plt.grid(True)
-plt.show()
+print "\nHistogram of anomaly scores: "
+print "\n Anomaly Score Bin             	# of instances"
+for i in range(len(score_hist[1])-1):
+	print '{0:.5f}'.format(score_hist[1][i])," - ", '{0:.5f}'.format(score_hist[1][i+1]), "		     ", score_hist[0][i]
 
 
 # Index of the instance that has the highest anomaly score
