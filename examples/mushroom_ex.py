@@ -45,5 +45,12 @@ print(mushroom_sibyl.get_feature_importance(anomaly_score_highest))
 {'single feature': ([22], 3.9745596868884547), 'pair features': ([(16, 22)], 3.9745596868884547)}
 '''
 
-# For further inspection of other features and feature-pairs in terms of contribution to the total anomaly score: *instance_inspect* returns the contribution of each single feature, and feature-pair, in the total anomaly score for a specific instance.
-mushroom_sibyl.instance_inspect(anomaly_score_highest, plot=True)
+'''
+For further inspection - you can uncomment the line below - of other features
+and feature-pairs in terms of contribution to the total anomaly
+score: (instance_inspect) returns the contribution of each single
+feature, and feature-pair, in the total anomaly score for a specific
+instance.
+'''
+
+# mushroom_sibyl.instance_inspect(anomaly_score_highest, plot=True)
