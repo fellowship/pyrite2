@@ -64,4 +64,4 @@ feature, and feature-pair, in the total anomaly score for a specific
 instance.
 '''
 
-# mushroom_sibyl.instance_inspect(anomaly_score_highest, plot=True)
+# abalone_sibyl.instance_inspect(anomaly_score_highest, plot=True)
