@@ -32,8 +32,8 @@ For the example above, *instance_inspect* produces the following plot:
 
 ![instance_inspect plot](instance_inspect.png)
 
-The figure above, shows a bar plot of each feature (and pair of features) vs its inverse relative frequency. The relative frequency for a feature is the frequency of that feature multiplied by the number of values that feature takes.
+The figure above, shows a bar plot of the inverse relative frequency for each feature, (heat map for each pair of features). The relative frequency for a feature is the frequency of that feature multiplied by the number of values that feature takes.
 
-The upper part of the figure represents this inverse relative frequency for each single feature. From this plot it is clear that the 22nd feature contributes the most to the anomaly score based on single features.
+The upper part of the figure represents this inverse relative frequency for each single feature. From this plot we can see that the value for the 22nd feature of this particular instance is the least common of all the other feature values.
 
-The lower part of this figure shows that the pair of features (16,22) contributes the most to the anomaly score, that is calculated based on pairs of features. That pair is followed by (16,21), and so on.
+Similarly, the lower part of the figure shows that the value (p, m) for the feature-pair (16, 22) is less common amongst the dataset thant the other feaure pairs of this instance.
