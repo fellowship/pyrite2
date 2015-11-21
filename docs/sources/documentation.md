@@ -40,7 +40,22 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
         - __freq_1d__: ndarray, containing the inverse relative frequency for each single feautre.
         - __freq_2d__: dxd ndarray, where ith column and jth row corresponds to the anomaly score due to features i and j.
 
-### Preprocessing
+### Discretization of Numerical Features
 
-Discretization of numeric features can be done manually or as a pre-processing step within Sibyl.
+Discretization converts numerical data features into discrete categories before Sibyl anomaly detection. The user calls the discretize function and inputs the list of column numbers to discretize and particular automatic method to use. It is assumed that the data features does not contain NANs.  The function 'discretize' performs discretization on the user provided list of numerical feature columns by calling the 'auto_discretization' function individually on each column. If the user desires a different discretization method for each column, this function should be called individually on a per column basis with paritcular parameters set per column.
+
+- __auto_discretize__(num_data,method,range_min_max):
+  - __Arguments__:
+    - __num_data__: numpy.array (numerical feature data to be discretized)
+    - __method__: int or str (method to use of either 'blocks','scott' or specific bin number)
+    - __range_min_max__: Tuple (data range from num_array to apply chosen method to)
+  - __Return__: pandas.Series cast as str (categorical labels after discretization)
+
+- __discretize__(columns, method = 'blocks')        
+  - __Arguments__: 
+    - __columns__: list (columns from self.df dataframe to discretize.)
+    - __method__: int or str (method to use of either 'blocks'(default),'scott' or specific bin number)
+  - __Return__: None (changes columns in self.df dataframe.)  
+
+                
 
