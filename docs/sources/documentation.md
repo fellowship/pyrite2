@@ -40,7 +40,7 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
         - __freq_1d__: ndarray, containing the inverse relative frequency for each single feautre.
         - __freq_2d__: dxd ndarray, where ith column and jth row corresponds to the anomaly score due to features i and j.
 
-### Discretization of Numerical Data to Categories
+### Discretization of Numerical Features
 
 Discretization converts numerical data features into discrete categories before Sibyl anomaly detection. The user calls the discretize function and inputs the list of column numbers to discretize and particular automatic method to use. It is assumed that the data features does not contain NANs.  The function 'discretize' performs discretization on the user provided list of numerical feature columns by calling the 'auto_discretization' function individually on each column. If the user desires a different discretization method for each column, this function should be called individually on a per column basis with paritcular parameters set per column.
 
