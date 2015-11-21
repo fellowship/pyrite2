@@ -83,7 +83,7 @@
                 <li class="toctree-l3"><a href="#feature-importance">Feature Importance</a></li>
                 
             
-                <li class="toctree-l3"><a href="#preprocessing">Preprocessing</a></li>
+                <li class="toctree-l3"><a href="#discretization-of-numerical-data-to-categories">Discretization of Numerical Data to Categories</a></li>
                 
             
             </ul>
@@ -212,8 +212,29 @@
 </ul>
 </li>
 </ul>
-<h3 id="preprocessing">Preprocessing</h3>
-<p>Discretization of numeric features can be done manually or as a pre-processing step within Sibyl.</p>
+<h3 id="discretization-of-numerical-data-to-categories">Discretization of Numerical Data to Categories</h3>
+<p>Discretization converts numerical data features into discrete categories before Sibyl anomaly detection. The user calls the discretize function and inputs the list of column numbers to discretize and particular automatic method to use. It is assumed that the data features does not contain NANs.  The function 'discretize' performs discretization on the user provided list of numerical feature columns by calling the 'auto_discretization' function individually on each column. If the user desires a different discretization method for each column, this function should be called individually on a per column basis with paritcular parameters set per column.</p>
+<ul>
+<li><strong>auto_discretize</strong>(num_data,method,range_min_max):</li>
+<li><strong>Arguments</strong>:<ul>
+<li><strong>num_data</strong>: numpy.array (numerical feature data to be discretized)</li>
+<li><strong>method</strong>: int or str (method to use of either 'blocks','scott' or specific bin number)</li>
+<li><strong>range_min_max</strong>: Tuple (data range from num_array to apply chosen method to)</li>
+</ul>
+</li>
+<li>
+<p><strong>Return</strong>: pandas.Series cast as str (categorical labels after discretization)</p>
+</li>
+<li>
+<p><strong>discretize</strong>(columns, method = 'blocks')        </p>
+</li>
+<li><strong>Arguments</strong>: <ul>
+<li><strong>columns</strong>: list (columns from self.df dataframe to discretize.)</li>
+<li><strong>method</strong>: int or str (method to use of either 'blocks'(default),'scott' or specific bin number)</li>
+</ul>
+</li>
+<li><strong>Return</strong>: None (changes columns in self.df dataframe.)  </li>
+</ul>
               
             </div>
           </div>
