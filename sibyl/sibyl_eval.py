@@ -4,7 +4,6 @@ import pandas
 import random
 import time
 import matplotlib.pyplot as plt
-import time
 import os
 import ntplib
 from astroML.plotting import hist
