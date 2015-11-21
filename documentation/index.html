@@ -83,7 +83,7 @@
                 <li class="toctree-l3"><a href="#feature-importance">Feature Importance</a></li>
                 
             
-                <li class="toctree-l3"><a href="#discretization-of-numerical-data-to-categories">Discretization of Numerical Data to Categories</a></li>
+                <li class="toctree-l3"><a href="#discretization-of-numerical-features">Discretization of Numerical Features</a></li>
                 
             
             </ul>
@@ -212,7 +212,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="discretization-of-numerical-data-to-categories">Discretization of Numerical Data to Categories</h3>
+<h3 id="discretization-of-numerical-features">Discretization of Numerical Features</h3>
 <p>Discretization converts numerical data features into discrete categories before Sibyl anomaly detection. The user calls the discretize function and inputs the list of column numbers to discretize and particular automatic method to use. It is assumed that the data features does not contain NANs.  The function 'discretize' performs discretization on the user provided list of numerical feature columns by calling the 'auto_discretization' function individually on each column. If the user desires a different discretization method for each column, this function should be called individually on a per column basis with paritcular parameters set per column.</p>
 <ul>
 <li><strong>auto_discretize</strong>(num_data,method,range_min_max):</li>
