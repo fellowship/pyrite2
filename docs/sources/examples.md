@@ -11,7 +11,7 @@ mushroom_data = pandas.read_csv(filename,header = None)
 
 # Return anomaly score for every sample in the dataset, sample 50 times and include 100 instances in each sample
 mushroom_sibyl = Sibyl(mushroom_data)
-score_vec = sibyl_data.score_dataset(50, 100)
+score_vec = mushroom_sibyl.score_dataset(50, 100)
 
 # Index of the instance that has the highest anomaly score
 anomaly_score_highest = score_vec.argmax()
