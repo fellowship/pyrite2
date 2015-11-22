@@ -16,6 +16,7 @@ https://archive.ics.uci.edu/ml/datasets.html
 
 # Read dataset
 if(not os.path.isfile("abalone.data")):
+    print "Downloading dataset ..."
     url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data'
     filename = wget.download(url)
 
@@ -26,19 +27,22 @@ abalone_sibyl = Sibyl(abalone_data)
 
 # Perform discretization for numerical attributes (from 1 - 8)
 cont_cols = range(1,9)
+print "Discretizing numeric columns"
 abalone_sibyl.discretize(cont_cols)
 
 # Return anomaly score for every sample in the dataset, sample 50
 # times and include 100 instances in each sample
 
+print "Training model"
 score_vec = abalone_sibyl.score_dataset(50, 100)
+print "Model training completed!"
 
 # convert to numpy array to plot the histogram of the scores
 score_array = score_vec.values
 score_hist = numpy.histogram(score_array)
 
-print "\nHistogram of anomaly scores: "
-print "\n Anomaly Score Bin             	# of instances"
+print "Histogram of anomaly scores:\n"
+print "Anomaly Score Bin           	      # of instances"
 for i in range(len(score_hist[1])-1):
 	print '{0:.5f}'.format(score_hist[1][i])," - ", '{0:.5f}'.format(score_hist[1][i+1]), "		     ", score_hist[0][i]
 
