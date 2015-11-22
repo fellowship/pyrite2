@@ -83,13 +83,8 @@ Histogram of anomaly scores:
 anomaly_score_highest = score_vec.argmax()
 max_anomaly_score = mushroom_sibyl.score_instance(anomaly_score_highest, 50, 100)
 
-# To check the most important features and pair of features for that instance
-most_important_feature = mushroom_sibyl.get_feature_importance(anomaly_score_highest)
-print "\nMost important feature and features_pair:\n"
-print "Most important single feature: "
-print most_important_feature['single feature'][0]
-print "Most important feature-pair: " 
-print most_important_feature['pair features'][0]
+print "\nanomaly score for the most anomalous instance: ", '{0:.5f}'.format(max_anomaly_score)
+
 
 # To check the most important features and pair of features for that instance
 # print(mushroom_sibyl.get_feature_importance(anomaly_score_highest))
