@@ -1,6 +1,7 @@
 from sibyl import *
 import wget
 import os.path
+from sklearn.metrics import roc_auc_score
 
 """
 
@@ -35,7 +36,33 @@ abalone_sibyl.discretize(cont_cols)
 
 print "Training model"
 score_vec = abalone_sibyl.score_dataset(50, 100)
-print "Model training completed!"
+print "Model training completed!\n"
+
+# Calculating the AUC Score
+'''
+In this dataset, the number of rings (last feature in the dataframe) is to be
+predicted, either as a continuous value or as a classification problem. The motivation
+behind predicting the number of rings in this dataset is to calculate the age of the abalone
+since it is simply equal to the number of rings after adding 1.5 to it.
+
+The anomaly class is chosen to be the abalones that have a number of rings less than 3, and
+larger than 21. These numbers are chosed based on the "Class Distribution" in this link:
+https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.names  
+'''
+y_true = abalone_data[abalone_data.columns[8]]
+y_true = y_true.apply(lambda x: (x>21 or x<3))
+
+# Computing the AUC Score
+print "AUC Score:\n"
+print('{0:.5f}'.format(roc_auc_score(y_true, score_vec.values)))
+
+
+# outputs:
+'''
+AUC Score:
+
+0.92700
+'''
 
 # convert to numpy array to plot the histogram of the scores
 score_array = score_vec.values
@@ -46,16 +73,41 @@ print "Anomaly Score Bin           	      # of instances"
 for i in range(len(score_hist[1])-1):
 	print '{0:.5f}'.format(score_hist[1][i])," - ", '{0:.5f}'.format(score_hist[1][i+1]), "		     ", score_hist[0][i]
 
+# outputs
+'''
+Anomaly Score Bin           	      # of instances
+0.07778  -  0.16178 		      1098
+0.16178  -  0.24578 		      1853
+0.24578  -  0.32978 		      646
+0.32978  -  0.41378 		      280
+0.41378  -  0.49778 		      168
+0.49778  -  0.58178 		      68
+0.58178  -  0.66578 		      27
+0.66578  -  0.74978 		      22
+0.74978  -  0.83378 		      11
+0.83378  -  0.91778 		      4
+'''
 
 # Index of the instance that has the highest anomaly score
 anomaly_score_highest = score_vec.argmax()
 max_anomaly_score = abalone_sibyl.score_instance(anomaly_score_highest, 50, 100)
 
 # To check the most important features and pair of features for that instance
-print(abalone_sibyl.get_feature_importance(anomaly_score_highest))
+most_important_feature = abalone_sibyl.get_feature_importance(anomaly_score_highest)
+print "\nMost important feature and features_pair:\n"
+
+print "Most important single feature: "
+print most_important_feature['single feature'][0]
+print "Most important feature-pair: " 
+print most_important_feature['pair features'][0]
 # outputs: most important single feature, and most important feature-pairs, in terms of contribution to the total anomaly score for the instance with the index "anomaly_score_highest"
 '''
-{'single feature': ([5], 59.671428571428564), 'pair features': ([(3, 5)], 83.539999999999992)}
+Most important feature and features_pair:
+
+Most important single feature: 
+[5]
+Most important feature-pair: 
+[(0, 5)]
 '''
 
 '''
