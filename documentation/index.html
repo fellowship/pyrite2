@@ -213,8 +213,19 @@
 </li>
 </ul>
 <h3 id="discretization-of-numerical-features">Discretization of Numerical Features</h3>
-<p>Discretization converts numerical data features into discrete categories before anomaly detection. To call the discretize function,  the list of column numbers must be specified. It is assumed that the data features does not contain NANs.  The function 'discretize' performs discretization by calling the 'auto_discretization' function individually on each column. To perform a different discretization for each column, this function should be called individually on a per column basis with paritcular parameters set per column.</p>
+<p>Discretization converts numerical data features into discrete categories before anomaly detection. To call the discretize function,  the list of column numbers must be specified. It is assumed that the data does not contain NANs.  The function <code>discretize</code> performs discretization by calling the <code>auto_discretization</code> function individually on each column. To perform a different discretization for each column, <code>auto_discretization</code> should be called directly on a per column basis.</p>
 <ul>
+<li>
+<p><strong>discretize</strong>(columns, method = 'blocks')        </p>
+<ul>
+<li><strong>Arguments</strong>: <ul>
+<li><strong>columns</strong>: list (columns from self.df dataframe to discretize.)</li>
+<li><strong>method</strong>: int or str (method to use of either 'blocks'(default),'scott' or specific bin number)</li>
+</ul>
+</li>
+<li><strong>Return</strong>: None (changes columns in self.df dataframe.)  </li>
+</ul>
+</li>
 <li>
 <p><strong>auto_discretize</strong>(num_data,method,range_min_max):</p>
 <ul>
@@ -225,17 +236,6 @@
 </ul>
 </li>
 <li><strong>Return</strong>: pandas.Series cast as str (categorical labels after discretization)</li>
-</ul>
-</li>
-<li>
-<p><strong>discretize</strong>(columns, method = 'blocks')        </p>
-<ul>
-<li><strong>Arguments</strong>: <ul>
-<li><strong>columns</strong>: list (columns from self.df dataframe to discretize.)</li>
-<li><strong>method</strong>: int or str (method to use of either 'blocks'(default),'scott' or specific bin number)</li>
-</ul>
-</li>
-<li><strong>Return</strong>: None (changes columns in self.df dataframe.)  </li>
 </ul>
 </li>
 </ul>
