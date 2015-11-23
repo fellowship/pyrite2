@@ -20,10 +20,10 @@ Sibyl uses the following dependencies:
 - __pandas__
 - __matplotlib__
 
-Once you have the dependencies installed, [download the distro](https://lendingai.s3.amazonaws.com/assets/dist/sibyl-0.1.1.tar.gz):
+Once you have the dependencies installed, [download the distro](https://lendingai.s3.amazonaws.com/assets/dist/sibyl-0.1.2.tar.gz):
 ```bash
-wget https://lendingai.s3.amazonaws.com/assets/dist/sibyl-0.1.1.tar.gz
-tar xvfz sibyl-0.1.1.tar.gz
+wget https://lendingai.s3.amazonaws.com/assets/dist/sibyl-0.1.2.tar.gz
+tar xvfz sibyl-0.1.2.tar.gz
 ```
 
 Go to the Sibyl folder and run the install command:
