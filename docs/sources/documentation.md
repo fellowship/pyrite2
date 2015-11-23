@@ -42,7 +42,13 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
 
 ### Discretization of Numerical Features
 
-Discretization converts numerical data features into discrete categories before anomaly detection. To call the discretize function,  the list of column numbers must be specified. It is assumed that the data features does not contain NANs.  The function 'discretize' performs discretization by calling the 'auto_discretization' function individually on each column. To perform a different discretization for each column, this function should be called individually on a per column basis with paritcular parameters set per column.
+Discretization converts numerical data features into discrete categories before anomaly detection. To call the discretize function,  the list of column numbers must be specified. It is assumed that the data does not contain NANs.  The function `discretize` performs discretization by calling the `auto_discretization` function individually on each column. To perform a different discretization for each column, `auto_discretization` should be called directly on a per column basis.
+
+- __discretize__(columns, method = 'blocks')        
+    - __Arguments__: 
+        - __columns__: list (columns from self.df dataframe to discretize.)
+        - __method__: int or str (method to use of either 'blocks'(default),'scott' or specific bin number)
+    - __Return__: None (changes columns in self.df dataframe.)  
 
 - __auto_discretize__(num_data,method,range_min_max):
     - __Arguments__:
@@ -51,11 +57,6 @@ Discretization converts numerical data features into discrete categories before 
         - __range_min_max__: Tuple (data range from num_array to apply chosen method to)
     - __Return__: pandas.Series cast as str (categorical labels after discretization)
 
-- __discretize__(columns, method = 'blocks')        
-    - __Arguments__: 
-        - __columns__: list (columns from self.df dataframe to discretize.)
-        - __method__: int or str (method to use of either 'blocks'(default),'scott' or specific bin number)
-    - __Return__: None (changes columns in self.df dataframe.)  
 
                 
 
