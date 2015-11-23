@@ -1,0 +1,4 @@
+include *.txt
+recursive-include examples *.txt *.py
+recursive-exclude *.py
+recursive-include pyrite *.txt *.pyc
