@@ -22,7 +22,7 @@ Sibyl uses the following dependencies:
 
 Once you have the dependencies installed, download the distro:
 ```bash
-wget http://...
+wget [https://lendingai.s3.amazonaws.com/assets/dist/sibyl-0.1.0.tar.gz](https://lendingai.s3.amazonaws.com/assets/dist/sibyl-0.1.0.tar.gz)
 ```
 Go to the Sibyl folder and run the install command:
 ```bash
