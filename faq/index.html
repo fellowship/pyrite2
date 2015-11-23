@@ -88,6 +88,23 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-accurate-is-sibyl">How accurate is Sibyl?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-does-the-anomaly-score-mean">What does the anomaly score mean?</a></li>
+                
+                    <li><a class="toctree-l4" href="#is-sibyl-a-parametric-or-non-parametric-method">Is Sibyl a parametric or non-parametric method?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-fast-is-sibyl">How fast is Sibyl?</a></li>
+                
+                    <li><a class="toctree-l4" href="#is-there-a-ui-for-sibyl">Is there a UI for Sibyl?</a></li>
+                
+                    <li><a class="toctree-l4" href="#where-can-i-get-the-source-code">Where can I get the source code?</a></li>
+                
+                    <li><a class="toctree-l4" href="#where-can-i-get-help">Where can I get help?</a></li>
+                
+            
             </ul>
         
     </li>
@@ -132,7 +149,23 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+<h3 id="how-accurate-is-sibyl">How accurate is Sibyl?</h3>
+<p>Sibyl is an unsupervised anomaly detection tool so its rate of detection will be dependent on input feature characteristics, and to a lesser extent, parameter selection.
+When applied to well known datasets, it's able to identify minority class members (obviously without the use of the label) at a rate of 60%-90%.</p>
+<h3 id="what-does-the-anomaly-score-mean">What does the anomaly score mean?</h3>
+<p>The anomaly score is essentially an indicator for how rare this particular observation is in the context of the entire dataset. The anomaly score is scaled between 0 and 1. </p>
+<h3 id="is-sibyl-a-parametric-or-non-parametric-method">Is Sibyl a parametric or non-parametric method?</h3>
+<p>Sibyl is a non-parametric method. Whenever it scores an observation, it is comparing it to the entire dataset (it uses certain sampling methods internally to make this tractable).</p>
+<h3 id="how-fast-is-sibyl">How fast is Sibyl?</h3>
+<p>Sibyl's time complexity is near linear and space complexity is quadratic to the number of dimensions. In most datasets, anomalies occur as a combination of multiple features. 
+Sibyl is able to detect such anomalies without requiring O(N^2) time complexity. As an example, a dataset with 10,000 observations and 20 features will take ~3 seconds to process.</p>
+<h3 id="is-there-a-ui-for-sibyl">Is there a UI for Sibyl?</h3>
+<p>Sibyl is a python module. It can be used from another python program, from the command line or in iPython Notebook.</p>
+<h3 id="where-can-i-get-the-source-code">Where can I get the source code?</h3>
+<p>Sibyl is not open source.  Please review the <a href="../license/">license terms</a>.</p>
+<h3 id="where-can-i-get-help">Where can I get help?</h3>
+<p>Please email your questions and comments to <a href="http://startup.ml/connect">Startup.ML</a>.</p>
               
             </div>
           </div>
