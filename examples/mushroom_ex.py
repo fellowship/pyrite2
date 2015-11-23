@@ -1,4 +1,4 @@
-from sibyl import *
+from pyrite import *
 import wget
 import os.path
 from sklearn.metrics import roc_auc_score
@@ -7,7 +7,7 @@ from sklearn.metrics import roc_auc_score
 
 This example uses the mushroom dataset that has mixed attributes - one
 categorical attribute out of 8 attributes in total - and discretization
-will be performed on the numerical attributes before applying sibyl
+will be performed on the numerical attributes before applying pyrite
 anomaly detection.
 
 The dataset is available at UC Irvine Machine Learning Repository
@@ -38,9 +38,9 @@ y_true = y_true.apply(lambda x: x=='p')
 data_anomaly.drop(data_anomaly.columns[0], 1, inplace=True)
 
 # Return anomaly score for every sample in the dataset, sample 50 times and include 8 instances in each sample
-mushroom_sibyl = Sibyl(data_anomaly)
+mushroom_pyrite = Pyrite(data_anomaly)
 print "Training model"
-score_vec = mushroom_sibyl.score_dataset(50, 8)
+score_vec = mushroom_pyrite.score_dataset(50, 8)
 print "Model training completed!\n"
 
 # Computing the AUC Score
@@ -81,13 +81,13 @@ Histogram of anomaly scores:
 '''
 # Index of the instance that has the highest anomaly score
 anomaly_score_highest = score_vec.argmax()
-max_anomaly_score = mushroom_sibyl.score_instance(anomaly_score_highest, 50, 100)
+max_anomaly_score = mushroom_pyrite.score_instance(anomaly_score_highest, 50, 100)
 
 print "\nanomaly score for the most anomalous instance: ", '{0:.5f}'.format(max_anomaly_score)
 
 
 # To check the most important features and pair of features for that instance
-# print(mushroom_sibyl.get_feature_importance(anomaly_score_highest))
+# print(mushroom_pyrite.get_feature_importance(anomaly_score_highest))
 # outputs: most important single feature, and most important feature-pairs, in terms of contribution to 
 # the total anomaly score for the instance with the index "anomaly_score_highest"
 '''
@@ -107,4 +107,4 @@ feature, and feature-pair, in the total anomaly score for a specific
 instance.
 '''
 
-# mushroom_sibyl.instance_inspect(anomaly_score_highest, plot=True)
+# mushroom_pyrite.instance_inspect(anomaly_score_highest, plot=True)

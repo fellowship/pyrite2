@@ -2,32 +2,14 @@ import numpy
 import math
 import pandas
 import random
-import time
 import matplotlib.pyplot as plt
 import os
-import ntplib
 from astroML.plotting import hist
 
-class Sibyl:
+class Pyrite:
 
 
     def __init__(self, dataset):
-        # Convert input dataset to datafraem and handle nulls
-
-        # Time Limit
-        time_0 = time.strptime("25 Nov 15", "%d %b %y")
-        time_0 = time.mktime(time_0)
-
-        try:
-            import ntplib
-            client = ntplib.NTPClient()
-            response = client.request('pool.ntp.org')
-        except:
-            raise Exception('Could not sync with time server.')
-
-        if (response.tx_time - time_0)/(60*60*24) > 30:
-            raise Exception('30 Day Trial Expired!')
-
         # Convert input dataset to datafraem and handle nulls
         # Store dataset in self.df
         self.df = pandas.DataFrame(dataset.copy())
@@ -62,6 +44,7 @@ class Sibyl:
         None, changes columns in the self.df data frame.
 
         """
+        print "\ndiscretizing numerical attributes ..."
 
         numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
 
@@ -162,8 +145,9 @@ class Sibyl:
 
 
     def score_instance(self, idx, samples_num, sample_size, seed = None):
+
         """
-        Same as sybil but scores a single instance.
+        Same as pyrite but scores a single instance.
 
         Input:
         idx: Index of the instance whose score is desired
@@ -175,7 +159,6 @@ class Sibyl:
         """
 
         print "\ncomputing anomaly score for a single instance ..."
-
 
         n,d = self.df.shape
 

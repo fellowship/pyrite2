@@ -1,14 +1,14 @@
 ### Instantiation
 
-Sibyl class takes a single argument (a Pandas DataFrame) when initialized.  The returned object provides the necessary methods for anomaly scoring either a single instance or the entire dataset.
+Pyrite class takes a single argument (a Pandas DataFrame) when initialized.  The returned object provides the necessary methods for anomaly scoring either a single instance or the entire dataset.
 
 - __init__(self, dataframe)
     - __Arguments__:
         - __dataframe__: Pandas Dataframe
-    - __Return__: Sibyl object over which we detect anomalies
+    - __Return__: Pyrite object over which we detect anomalies
 
 ### Anomaly Scoring
-Once the dataframe is loaded, Sibyl randomly samples rows from the dataframe. The number of times sampled is controlled by: `sample_num` and number of instances picked in each sample is controlled by: `sample_size`. Sibyl can compute the anomaly score for each instance (via score_dataset), or for a single instance (via score_instance).
+Once the dataframe is loaded, Pyrite randomly samples rows from the dataframe. The number of times sampled is controlled by: `sample_num` and number of instances picked in each sample is controlled by: `sample_size`. Pyrite can compute the anomaly score for each instance (via score_dataset), or for a single instance (via score_instance).
 
 - __score_dataset__(sample_num, sample_size)
     - __Arguments__:
@@ -25,7 +25,7 @@ Once the dataframe is loaded, Sibyl randomly samples rows from the dataframe. Th
 
 ### Feature Importance
 
-Sibyl provides a way to further explore the anomalous instances in a dataset, through supplying a list of features, and feature-pairs, that contribute the most in its anomaly score and thus gain insights on why an instance was classified as an anomaly.
+Pyrite provides a way to further explore the anomalous instances in a dataset, through supplying a list of features, and feature-pairs, that contribute the most in its anomaly score and thus gain insights on why an instance was classified as an anomaly.
 
 - __get_feature_importance__(single_instance)
     - __Arguments__:

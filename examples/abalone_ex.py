@@ -1,4 +1,4 @@
-from sibyl import *
+from pyrite import *
 import wget
 import os.path
 from sklearn.metrics import roc_auc_score
@@ -7,7 +7,7 @@ from sklearn.metrics import roc_auc_score
 
 This example uses the Abalone dataset that has mixed attributes - one
 categorical attribute out of 8 attributes in total - and discretization
-will be performed on the numerical attributes before applying sibyl
+will be performed on the numerical attributes before applying pyrite
 anomaly detection.
 
 The dataset is available at UC Irvine Machine Learning Repository
@@ -23,19 +23,19 @@ if(not os.path.isfile("abalone.data")):
 
 abalone_data = pandas.read_csv('abalone.data',header = None)
 
-# Create a sibyl object for this dataset
-abalone_sibyl = Sibyl(abalone_data)
+# Create a pyrite object for this dataset
+abalone_pyrite = Pyrite(abalone_data)
 
 # Perform discretization for numerical attributes (from 1 - 8)
 cont_cols = range(1,9)
 print "Discretizing numeric columns"
-abalone_sibyl.discretize(cont_cols)
+abalone_pyrite.discretize(cont_cols)
 
 # Return anomaly score for every sample in the dataset, sample 50
 # times and include 100 instances in each sample
 
 print "Training model"
-score_vec = abalone_sibyl.score_dataset(50, 100)
+score_vec = abalone_pyrite.score_dataset(50, 100)
 print "Model training completed!\n"
 
 # Calculating the AUC Score
@@ -90,12 +90,12 @@ Anomaly Score Bin           	      # of instances
 
 # Index of the instance that has the highest anomaly score
 anomaly_score_highest = score_vec.argmax()
-max_anomaly_score = abalone_sibyl.score_instance(anomaly_score_highest, 50, 100)
+max_anomaly_score = abalone_pyrite.score_instance(anomaly_score_highest, 50, 100)
 
 print "\nanomaly score for the most anomalous instance: ", '{0:.5f}'.format(max_anomaly_score)
 
 # To check the most important features and pair of features for that instance
-# most_important_feature = abalone_sibyl.get_feature_importance(anomaly_score_highest)
+# most_important_feature = abalone_pyrite.get_feature_importance(anomaly_score_highest)
 # outputs: most important single feature, and most important feature-pairs, in terms of contribution to
 # the total anomaly score for the instance with the index "anomaly_score_highest"
 '''
@@ -115,4 +115,4 @@ feature, and feature-pair, in the total anomaly score for a specific
 instance.
 '''
 
-# abalone_sibyl.instance_inspect(anomaly_score_highest, plot=True)
+# abalone_pyrite.instance_inspect(anomaly_score_highest, plot=True)
