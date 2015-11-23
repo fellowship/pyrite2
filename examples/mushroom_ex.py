@@ -40,7 +40,7 @@ data_anomaly.drop(data_anomaly.columns[0], 1, inplace=True)
 # Return anomaly score for every sample in the dataset, sample 50 times and include 100 instances in each sample
 mushroom_sibyl = Sibyl(data_anomaly)
 print "Training model"
-score_vec = mushroom_sibyl.score_dataset(50, 100)
+score_vec = mushroom_sibyl.score_dataset(50, 8)
 print "Model training completed!\n"
 
 # Computing the AUC Score
@@ -51,7 +51,7 @@ print('{0:.5f}'.format(roc_auc_score(y_true, score_vec.values)))
 '''
 AUC Score:
 
-0.98474
+0.93912
 '''
 
 # convert to numpy array to plot the histogram of the scores
@@ -68,16 +68,16 @@ for i in range(len(score_hist[1])-1):
 Histogram of anomaly scores: 
 
  Anomaly Score Bin             	# of instances
-0.00000  -  0.05782 		      3828
-0.05782  -  0.11564 		      434
-0.11564  -  0.17345 		      106
-0.17345  -  0.23127 		      59
-0.23127  -  0.28909 		      3
-0.28909  -  0.34691 		      0
-0.34691  -  0.40473 		      0
-0.40473  -  0.46255 		      0
-0.46255  -  0.52036 		      2
-0.52036  -  0.57818 		      1
+0.08727  -  0.15536 		      1473
+0.15536  -  0.22345 		      440
+0.22345  -  0.29155 		      1217
+0.29155  -  0.35964 		      588
+0.35964  -  0.42773 		      136
+0.42773  -  0.49582 		      315
+0.49582  -  0.56391 		      241
+0.56391  -  0.63200 		      19
+0.63200  -  0.70009 		      0
+0.70009  -  0.76818 		      4
 '''
 # Index of the instance that has the highest anomaly score
 anomaly_score_highest = score_vec.argmax()
