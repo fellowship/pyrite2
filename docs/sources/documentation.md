@@ -42,7 +42,9 @@ Sibyl provides a way to further explore the anomalous instances in a dataset, th
 
 ### Discretization of Numerical Features
 
-Discretization converts numerical data features into discrete categories before anomaly detection. To call the discretize function,  the list of column numbers must be specified. It is assumed that the data does not contain NANs.  The function `discretize` performs discretization by calling the `auto_discretize` function individually on each column. To perform a different discretization for each column, `auto_discretize` should be called directly on a per column basis.
+Discretization converts numerical data features into discrete categories before anomaly detection. To call the discretize function,  the list of column numbers must be specified. It is assumed that the data does not contain NANs.  
+
+The function `discretize` performs discretization by calling the `auto_discretize` function individually on each column. To perform a different discretization, `auto_discretize` should be called directly on a per column basis.
 
 - __discretize__(columns, method = 'blocks')        
     - __Arguments__: 
