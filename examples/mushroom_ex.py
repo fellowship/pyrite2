@@ -37,7 +37,7 @@ y_true = y_true.apply(lambda x: x=='p')
 
 data_anomaly.drop(data_anomaly.columns[0], 1, inplace=True)
 
-# Return anomaly score for every sample in the dataset, sample 50 times and include 100 instances in each sample
+# Return anomaly score for every sample in the dataset, sample 50 times and include 8 instances in each sample
 mushroom_sibyl = Sibyl(data_anomaly)
 print "Training model"
 score_vec = mushroom_sibyl.score_dataset(50, 8)
