@@ -8,7 +8,8 @@ Pyrite is designed for categorical features (e.g., city can contain 'San Francis
 
 ```
 from pyrite import Pyrite
-pyrite_data = Pyrite(pandas.read_csv('expanded.csv'))
+Location = r'births1880.csv'
+pyrite_data = Pyrite(pandas.read_csv(Location))
 score_vec = pyrite_data.score_dataset(50, 100)
 ```
 
