@@ -140,8 +140,8 @@ class Pyrite:
             numpy.apply_along_axis(self.compute_frequency, 1,diDF, s0,s1)
             scores = scores + numpy.sum(theta == zeros,axis = 1)
             
-            self.mean = scores.mean()
-            self.std = scores.std()
+        self.mean = scores.mean()
+        self.std = scores.std()
 
 
         return pandas.Series((scores - self.mean)/self.std,index = indices)
