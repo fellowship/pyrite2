@@ -13,6 +13,8 @@ class Pyrite:
         # Convert input dataset to datafraem and handle nulls
         # Store dataset in self.df
         self.df = pandas.DataFrame(dataset.copy())
+        self.mean = 0.0
+        self.std = 0.0
 
 
     def auto_discretize(self,num_data,method,range_min_max):
@@ -138,9 +140,12 @@ class Pyrite:
             numpy.apply_along_axis(self.compute_frequency, 1,diDF, s0,s1)
             scores = scores + numpy.sum(theta == zeros,axis = 1)
 
+            self.mean = scores.mean()
+            self.std = scores.std()
 
-        return pandas.Series(1.0*scores/samples_num/d, index = indices)
 
+        return pandas.Series((scores - self.mean)/self.std,index = indices)
+        
 
 
 
@@ -157,8 +162,6 @@ class Pyrite:
         Output:
         score: float - Anomaly Score of single_instance
         """
-
-        print "\ncomputing anomaly score for a single instance ..."
 
         n,d = self.df.shape
 
@@ -190,7 +193,7 @@ class Pyrite:
             occurances1 = occurances[:,s1]
             score = score + numpy.sum((occurances0*occurances1).sum(axis = 0) == zeros)
 
-        return 1.0*score/samples_num/d
+        return 1.0*(score-self.mean)/self.std
 
 
     def instance_inspect(self, idx, plot = False):
@@ -286,7 +289,6 @@ class Pyrite:
         Output:
         dictionary with locations and scores of single most rare feature and single most rare column
         """
-        print "\ngetting important features ..."
         t1,t2 = self.instance_inspect(idx, plot = False)
         columns = list(self.df.columns)
         d1_score = t1.max()
