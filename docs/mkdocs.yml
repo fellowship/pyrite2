@@ -1,4 +1,4 @@
-site_name: Sibyl
+site_name: Pyrite
 theme: readthedocs
 docs_dir: sources
 site_url: http://pyrite.startup.ml
