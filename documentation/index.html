@@ -37,7 +37,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-70335803-1', 'sibyl.startup.ml');
+      ga('create', 'UA-70335803-1', 'pyrite.startup.ml');
       ga('send', 'pageview');
   </script>
   
@@ -145,19 +145,19 @@
             <div class="section">
               
                 <h3 id="instantiation">Instantiation</h3>
-<p>Sibyl class takes a single argument (a Pandas DataFrame) when initialized.  The returned object provides the necessary methods for anomaly scoring either a single instance or the entire dataset.</p>
+<p>Pyrite class takes a single argument (a Pandas DataFrame) when initialized.  The returned object provides the necessary methods for anomaly scoring either a single instance or the entire dataset.</p>
 <ul>
 <li><strong>init</strong>(self, dataframe)<ul>
 <li><strong>Arguments</strong>:<ul>
 <li><strong>dataframe</strong>: Pandas Dataframe</li>
 </ul>
 </li>
-<li><strong>Return</strong>: Sibyl object over which we detect anomalies</li>
+<li><strong>Return</strong>: Pyrite object over which we detect anomalies</li>
 </ul>
 </li>
 </ul>
 <h3 id="anomaly-scoring">Anomaly Scoring</h3>
-<p>Once the dataframe is loaded, Sibyl randomly samples rows from the dataframe. The number of times sampled is controlled by: <code>sample_num</code> and number of instances picked in each sample is controlled by: <code>sample_size</code>. Sibyl can compute the anomaly score for each instance (via score_dataset), or for a single instance (via score_instance).</p>
+<p>Once the dataframe is loaded, Pyrite randomly samples rows from the dataframe. The number of times sampled is controlled by: <code>sample_num</code> and number of instances picked in each sample is controlled by: <code>sample_size</code>. Pyrite can compute the anomaly score for each instance (via score_dataset), or for a single instance (via score_instance).</p>
 <ul>
 <li>
 <p><strong>score_dataset</strong>(sample_num, sample_size)</p>
@@ -184,7 +184,7 @@
 </li>
 </ul>
 <h3 id="feature-importance">Feature Importance</h3>
-<p>Sibyl provides a way to further explore the anomalous instances in a dataset, through supplying a list of features, and feature-pairs, that contribute the most in its anomaly score and thus gain insights on why an instance was classified as an anomaly.</p>
+<p>Pyrite provides a way to further explore the anomalous instances in a dataset, through supplying a list of features, and feature-pairs, that contribute the most in its anomaly score and thus gain insights on why an instance was classified as an anomaly.</p>
 <ul>
 <li>
 <p><strong>get_feature_importance</strong>(single_instance)</p>
