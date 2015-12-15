@@ -2,7 +2,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 setup(
-    name='pyrite',
+    name='pyrite2',
     version='0.1.4',
     author='StartupML',
     author_email='team@startup.ml',
