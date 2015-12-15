@@ -3,7 +3,7 @@ from setuptools import find_packages
 
 setup(
     name='pyrite2',
-    version='0.1.7',
+    version='0.1.8',
     author='StartupML',
     author_email='team@startup.ml',
     license='LICENSE.txt',

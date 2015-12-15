@@ -2,8 +2,9 @@ import numpy
 import math
 import pandas
 import random
-import matplotlib.pyplot as plt
+import matplotlib
 matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import os
 from astroML.plotting import hist
 
