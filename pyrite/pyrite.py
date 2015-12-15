@@ -2,7 +2,7 @@ import numpy
 import math
 import pandas
 import random
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import os
 from astroML.plotting import hist
 
@@ -22,7 +22,7 @@ class Pyrite:
         (bayesian blocks, scott method or fixed bin number) along the desired data range is passed to a special version of hist which gives cutpoints for discretization and returns the "categorized" version of the original data
         """
         hist_data = hist(num_data, bins=method,range=range_min_max)
-        plt.close('all')
+        #plt.close('all')
         leng = len(hist_data[1])
         # fix cutoff to make sure outliers are properly categorized as well if necessary
         hist_data[1][leng-1] = num_data.max()
@@ -193,12 +193,12 @@ class Pyrite:
         return 1.0*score/samples_num/d
 
 
-    def instance_inspect(self, idx, plot = False):
+    def instance_inspect(self, idx):
         """
         Compute the inverse relative frequency of a category (pair of categories) in each column (pairs of columns)
         for categories in an anomalous instance index by idx.
         inverse relative frequency = total # of instances/(# of instances with fixed category X # of categories for that feature )
-        Plot relative frequencies (optional).
+        Plot relative frequencies (disabled).
 
         Input:
         idx: index of a single instance to inspect.
@@ -235,40 +235,40 @@ class Pyrite:
 
 
         # plot tables
-        if plot:
-            fig = plt.figure(figsize=(10,15))
-            ax = fig.add_subplot(2,1,1)
-            plt.subplots_adjust(hspace = 0.5)
-            w=0.35
-            ax.bar(range(0,d),freq_1d)
-            ax.set_xlim(0,d)
-            ax.set_ylim(0,max(freq_1d)*1.1)
-            ax.set_ylabel('1/relative frequency of a category', fontsize = 14)
-            ax.set_title('Category inverted relative frequencies\n'+
-                         '(frequency of specified category times number of categories)\n'+
-                         'for each column',
-                            fontsize =16,)
-            xTickMarks = [str(colnames[i]) + ': ' + str(y[i]) for i in range(0,d)]
-            ax.set_xticks(numpy.array(range(0,d))+0.5)
-            xtickNames = ax.set_xticklabels(xTickMarks)
-            plt.setp(xtickNames, rotation=90, fontsize=10)
+        #if plot:
+        #    fig = plt.figure(figsize=(10,15))
+        #    ax = fig.add_subplot(2,1,1)
+        #    plt.subplots_adjust(hspace = 0.5)
+        #    w=0.35
+        #    ax.bar(range(0,d),freq_1d)
+        #    ax.set_xlim(0,d)
+        #    ax.set_ylim(0,max(freq_1d)*1.1)
+        #    ax.set_ylabel('1/relative frequency of a category', fontsize = 14)
+        #    ax.set_title('Category inverted relative frequencies\n'+
+        #                 '(frequency of specified category times number of categories)\n'+
+        #                 'for each column',
+        #                    fontsize =16,)
+        #    xTickMarks = [str(colnames[i]) + ': ' + str(y[i]) for i in range(0,d)]
+        #    ax.set_xticks(numpy.array(range(0,d))+0.5)
+        #    xtickNames = ax.set_xticklabels(xTickMarks)
+        #    plt.setp(xtickNames, rotation=90, fontsize=10)
 
-            ax1 = fig.add_subplot(2,1,2)
-            ax1.set_ylabel('1/relative frequency of a pair of categories', fontsize = 14)
-            ax1.set_title('Pairs of categories inverted relative frequencies\n'+
-                          '(frequency of specified category times number ofcategories)\n'+
-                          'for each column',
-                             fontsize = 16)
-            im = ax1.imshow(freq_2d.T,interpolation = "none")
-            tickMarks = [str(colnames[i]) + ': ' + str(y[i]) for i in range(0,d)]
-            ax1.set_xticks(numpy.array(range(0,d))+0)
-            ax1.set_yticks(numpy.array(range(0,d))+0)
-            xtickNames = ax1.set_xticklabels(tickMarks)
-            ytickNames = ax1.set_yticklabels(tickMarks)
-            plt.setp(xtickNames, rotation=90, fontsize=10)
-            plt.setp(ytickNames, rotation=0, fontsize=10)
-            plt.colorbar(im)
-            plt.show()
+        #    ax1 = fig.add_subplot(2,1,2)
+        #    ax1.set_ylabel('1/relative frequency of a pair of categories', fontsize = 14)
+        #    ax1.set_title('Pairs of categories inverted relative frequencies\n'+
+        #                  '(frequency of specified category times number ofcategories)\n'+
+        #                  'for each column',
+        #                     fontsize = 16)
+        #    im = ax1.imshow(freq_2d.T,interpolation = "none")
+        #    tickMarks = [str(colnames[i]) + ': ' + str(y[i]) for i in range(0,d)]
+        #    ax1.set_xticks(numpy.array(range(0,d))+0)
+        #    ax1.set_yticks(numpy.array(range(0,d))+0)
+        #    xtickNames = ax1.set_xticklabels(tickMarks)
+        #    ytickNames = ax1.set_yticklabels(tickMarks)
+        #    plt.setp(xtickNames, rotation=90, fontsize=10)
+        #    plt.setp(ytickNames, rotation=0, fontsize=10)
+        #    plt.colorbar(im)
+        #    plt.show()
 
         return (freq_1d,freq_2d)
 
@@ -287,7 +287,7 @@ class Pyrite:
         dictionary with locations and scores of single most rare feature and single most rare column
         """
         print "\ngetting important features ..."
-        t1,t2 = self.instance_inspect(idx, plot = False)
+        t1,t2 = self.instance_inspect(idx)
         columns = list(self.df.columns)
         d1_score = t1.max()
         d1_loc = [columns[i] for i in numpy.where(t1 == t1.max())[0]]
