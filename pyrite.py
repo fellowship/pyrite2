@@ -2,8 +2,6 @@ import numpy
 import math
 import pandas
 import random
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
 from astroML.plotting import hist
@@ -141,13 +139,13 @@ class Pyrite:
             # and then sum them up along the subsample in a global theta variable
             numpy.apply_along_axis(self.compute_frequency, 1,diDF, s0,s1)
             scores = scores + numpy.sum(theta == zeros,axis = 1)
-
+            
         self.mean = scores.mean()
         self.std = scores.std()
 
 
         return pandas.Series((scores - self.mean)/self.std,index = indices)
-        
+
 
 
 
@@ -291,6 +289,7 @@ class Pyrite:
         Output:
         dictionary with locations and scores of single most rare feature and single most rare column
         """
+        
         t1,t2 = self.instance_inspect(idx, plot = False)
         columns = list(self.df.columns)
         d1_score = t1.max()
